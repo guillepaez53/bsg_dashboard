@@ -18,7 +18,7 @@ from config.constants import DATA_ACCUMULATED_DIR, COMPANY, COMPANIES
 
 
 # Usar @st.cache_data para cachear la carga de datos y mejorar el rendimiento
-@st.cache_data
+# @st.cache_data
 def cargar_datos():
     # Cargamos los datos
     df = pd.read_csv(os.path.join(DATA_ACCUMULATED_DIR, "ci_acumulado.csv"))
