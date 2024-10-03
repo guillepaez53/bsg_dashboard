@@ -93,14 +93,21 @@ for k in regiones.keys():
 
     regiones[k]["Tipo"] = regiones[k]["Métrica"].map(METRICAS)
 
+    regiones[k].loc[
+        regiones[k]["Métrica"].isin([" Market Share (%)", " Pairs Sold (000s)"]),
+        "Métrica",
+    ] = (
+        regiones[k]["Métrica"] + "_" + regiones[k]["Canal"]
+    )
+
     regiones[k].loc[:, "Región"] = cod_regiones[k][0]
 
     regiones[k].loc[:, "Año"] = year
 
+    first_column = regiones[k].pop("Tipo")
+    regiones[k].insert(0, "Tipo", first_column)
     first_column = regiones[k].pop("Canal")
     regiones[k].insert(0, "Canal", first_column)
-    first_column = regiones[k].pop("Región")
-    regiones[k].insert(0, "Región", first_column)
     first_column = regiones[k].pop("Región")
     regiones[k].insert(0, "Región", first_column)
 

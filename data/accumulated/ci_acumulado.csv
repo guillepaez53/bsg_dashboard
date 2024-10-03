@@ -1,121 +1,121 @@
-Año,Región,Canal,Métrica,A,B,C,D,E,AVG,Tipo,AVG_otros,diferencia,diferencia_porcentaje
-10,North America,Internet, Retail Price ($ per pair),67.0,67.0,67.0,67.0,67.0,67.0,Precio,67.0,0.0,0.0
-10,North America,Internet, Search Engine Advert. ($000s),5000.0,5000.0,5000.0,5000.0,5000.0,5000.0,Imagen,5000.0,0.0,0.0
-10,North America,Internet, Free Shipping,0.0,0.0,0.0,0.0,0.0,0.0,Marketing,0.0,0.0,
-10,North America,Internet, S/Q Rating (1 to 10 stars),4.0,4.0,4.0,4.0,4.0,4.0,Calidad,4.0,0.0,0.0
-10,North America,Internet, Model Availability,200.0,200.0,200.0,200.0,200.0,200.0,Calidad,200.0,0.0,0.0
-10,North America,Internet, Brand Advertising ($000s),10000.0,10000.0,10000.0,10000.0,10000.0,10000.0,Imagen,10000.0,0.0,0.0
-10,North America,Internet, Celebrity Appeal,0.0,0.0,0.0,0.0,0.0,0.0,Imagen,0.0,0.0,
-10,North America,Internet, Brand Reputation (prior-year image),70.0,70.0,70.0,70.0,70.0,70.0,Imagen,70.0,0.0,0.0
-10,North America,Internet, Online Orders (000s),353.0,353.0,353.0,353.0,353.0,353.0,Volumen,353.0,0.0,0.0
-10,North America,Internet, Pairs Sold (000s),353.0,353.0,353.0,353.0,353.0,353.0,Volumen,353.0,0.0,0.0
-10,North America,Internet, Market Share (%),0.2,0.2,0.2,0.2,0.2,0.2,Cuota,0.2,0.0,0.0
-10,North America,Mayorista, Wholesale Price ($ per pair),48.0,48.0,48.0,48.0,48.0,48.0,Precio,48.0,0.0,0.0
-10,North America,Mayorista, S/Q Rating (1 to 10 stars),4.0,4.0,4.0,4.0,4.0,4.0,Calidad,4.0,0.0,0.0
-10,North America,Mayorista, Model Availability,200.0,200.0,200.0,200.0,200.0,200.0,Calidad,200.0,0.0,0.0
-10,North America,Mayorista, Brand Advertising ($000s),10000.0,10000.0,10000.0,10000.0,10000.0,10000.0,Imagen,10000.0,0.0,0.0
-10,North America,Mayorista, Rebate Offer ($ per pair),5.0,5.0,5.0,5.0,5.0,5.0,Precio,5.0,0.0,0.0
-10,North America,Mayorista, Delivery Time (weeks),3.0,3.0,3.0,3.0,3.0,3.0,Marketing,3.0,0.0,0.0
-10,North America,Mayorista, Retailer Support ($ per outlet),4000.0,4000.0,4000.0,4000.0,4000.0,4000.0,Marketing,4000.0,0.0,0.0
-10,North America,Mayorista, Retail Outlets,1000.0,1000.0,1000.0,1000.0,1000.0,1000.0,Marketing,1000.0,0.0,0.0
-10,North America,Mayorista, Celebrity Appeal,0.0,0.0,0.0,0.0,0.0,0.0,Imagen,0.0,0.0,
-10,North America,Mayorista, Brand Reputation (prior-year image),70.0,70.0,70.0,70.0,70.0,70.0,Imagen,70.0,0.0,0.0
-10,North America,Mayorista, Pairs Demanded (000s),1997.0,1997.0,1997.0,1997.0,1997.0,1997.0,Volumen,1997.0,0.0,0.0
-10,North America,Mayorista,   Gained / Lost (due to stockouts),0.0,0.0,0.0,0.0,0.0,0.0,Volumen,0.0,0.0,
-10,North America,Mayorista, Pairs Sold (000s),1997.0,1997.0,1997.0,1997.0,1997.0,1997.0,Volumen,1997.0,0.0,0.0
-10,North America,Mayorista, Market Share (%),0.2,0.2,0.2,0.2,0.2,0.2,Cuota,0.2,0.0,0.0
-10,North America,Privada, Offer Price (max = $40.00),32.0,32.0,32.0,32.0,32.0,32.0,Precio,32.0,0.0,0.0
-10,North America,Privada, S/Q Rating (min = 3.0 stars),3.0,3.0,3.0,3.0,3.0,3.0,Calidad,3.0,0.0,0.0
-10,North America,Privada, Pairs Offered (000s),200.0,200.0,200.0,200.0,200.0,200.0,Volumen,200.0,0.0,0.0
-10,North America,Privada, Pairs Sold (000s),200.0,200.0,200.0,200.0,200.0,200.0,Volumen,200.0,0.0,0.0
-10,North America,Privada, Market Share (%),0.2,0.2,0.2,0.2,0.2,0.2,Cuota,0.2,0.0,0.0
-10,Europe-Africa,Internet, Retail Price ($ per pair),72.0,72.0,72.0,72.0,72.0,72.0,Precio,72.0,0.0,0.0
-10,Europe-Africa,Internet, Search Engine Advert. ($000s),4500.0,4500.0,4500.0,4500.0,4500.0,4500.0,Imagen,4500.0,0.0,0.0
-10,Europe-Africa,Internet, Free Shipping,0.0,0.0,0.0,0.0,0.0,0.0,Marketing,0.0,0.0,
-10,Europe-Africa,Internet, S/Q Rating (1 to 10 stars),4.0,4.0,4.0,4.0,4.0,4.0,Calidad,4.0,0.0,0.0
-10,Europe-Africa,Internet, Model Availability,200.0,200.0,200.0,200.0,200.0,200.0,Calidad,200.0,0.0,0.0
-10,Europe-Africa,Internet, Brand Advertising ($000s),9000.0,9000.0,9000.0,9000.0,9000.0,9000.0,Imagen,9000.0,0.0,0.0
-10,Europe-Africa,Internet, Celebrity Appeal,0.0,0.0,0.0,0.0,0.0,0.0,Imagen,0.0,0.0,
-10,Europe-Africa,Internet, Brand Reputation (prior-year image),70.0,70.0,70.0,70.0,70.0,70.0,Imagen,70.0,0.0,0.0
-10,Europe-Africa,Internet, Online Orders (000s),300.0,300.0,300.0,300.0,300.0,300.0,Volumen,300.0,0.0,0.0
-10,Europe-Africa,Internet, Pairs Sold (000s),300.0,300.0,300.0,300.0,300.0,300.0,Volumen,300.0,0.0,0.0
-10,Europe-Africa,Internet, Market Share (%),0.2,0.2,0.2,0.2,0.2,0.2,Cuota,0.2,0.0,0.0
-10,Europe-Africa,Mayorista, Wholesale Price ($ per pair),53.0,53.0,53.0,53.0,53.0,53.0,Precio,53.0,0.0,0.0
-10,Europe-Africa,Mayorista, S/Q Rating (1 to 10 stars),4.0,4.0,4.0,4.0,4.0,4.0,Calidad,4.0,0.0,0.0
-10,Europe-Africa,Mayorista, Model Availability,200.0,200.0,200.0,200.0,200.0,200.0,Calidad,200.0,0.0,0.0
-10,Europe-Africa,Mayorista, Brand Advertising ($000s),9000.0,9000.0,9000.0,9000.0,9000.0,9000.0,Imagen,9000.0,0.0,0.0
-10,Europe-Africa,Mayorista, Rebate Offer ($ per pair),5.0,5.0,5.0,5.0,5.0,5.0,Precio,5.0,0.0,0.0
-10,Europe-Africa,Mayorista, Delivery Time (weeks),3.0,3.0,3.0,3.0,3.0,3.0,Marketing,3.0,0.0,0.0
-10,Europe-Africa,Mayorista, Retailer Support ($ per outlet),4000.0,4000.0,4000.0,4000.0,4000.0,4000.0,Marketing,4000.0,0.0,0.0
-10,Europe-Africa,Mayorista, Retail Outlets,1000.0,1000.0,1000.0,1000.0,1000.0,1000.0,Marketing,1000.0,0.0,0.0
-10,Europe-Africa,Mayorista, Celebrity Appeal,0.0,0.0,0.0,0.0,0.0,0.0,Imagen,0.0,0.0,
-10,Europe-Africa,Mayorista, Brand Reputation (prior-year image),70.0,70.0,70.0,70.0,70.0,70.0,Imagen,70.0,0.0,0.0
-10,Europe-Africa,Mayorista, Pairs Demanded (000s),1700.0,1700.0,1700.0,1700.0,1700.0,1700.0,Volumen,1700.0,0.0,0.0
-10,Europe-Africa,Mayorista,   Gained / Lost (due to stockouts),0.0,0.0,0.0,0.0,0.0,0.0,Volumen,0.0,0.0,
-10,Europe-Africa,Mayorista, Pairs Sold (000s),1700.0,1700.0,1700.0,1700.0,1700.0,1700.0,Volumen,1700.0,0.0,0.0
-10,Europe-Africa,Mayorista, Market Share (%),0.2,0.2,0.2,0.2,0.2,0.2,Cuota,0.2,0.0,0.0
-10,Europe-Africa,Privada, Offer Price (max = $40.00),37.0,37.0,37.0,37.0,37.0,37.0,Precio,37.0,0.0,0.0
-10,Europe-Africa,Privada, S/Q Rating (min = 3.0 stars),3.0,3.0,3.0,3.0,3.0,3.0,Calidad,3.0,0.0,0.0
-10,Europe-Africa,Privada, Pairs Offered (000s),200.0,200.0,200.0,200.0,200.0,200.0,Volumen,200.0,0.0,0.0
-10,Europe-Africa,Privada, Pairs Sold (000s),200.0,200.0,200.0,200.0,200.0,200.0,Volumen,200.0,0.0,0.0
-10,Europe-Africa,Privada, Market Share (%),0.2,0.2,0.2,0.2,0.2,0.2,Cuota,0.2,0.0,0.0
-10,Asia-Pacifc,Internet, Retail Price ($ per pair),67.0,67.0,67.0,67.0,67.0,67.0,Precio,67.0,0.0,0.0
-10,Asia-Pacifc,Internet, Search Engine Advert. ($000s),4000.0,4000.0,4000.0,4000.0,4000.0,4000.0,Imagen,4000.0,0.0,0.0
-10,Asia-Pacifc,Internet, Free Shipping,0.0,0.0,0.0,0.0,0.0,0.0,Marketing,0.0,0.0,
-10,Asia-Pacifc,Internet, S/Q Rating (1 to 10 stars),4.0,4.0,4.0,4.0,4.0,4.0,Calidad,4.0,0.0,0.0
-10,Asia-Pacifc,Internet, Model Availability,200.0,200.0,200.0,200.0,200.0,200.0,Calidad,200.0,0.0,0.0
-10,Asia-Pacifc,Internet, Brand Advertising ($000s),8000.0,8000.0,8000.0,8000.0,8000.0,8000.0,Imagen,8000.0,0.0,0.0
-10,Asia-Pacifc,Internet, Celebrity Appeal,0.0,0.0,0.0,0.0,0.0,0.0,Imagen,0.0,0.0,
-10,Asia-Pacifc,Internet, Brand Reputation (prior-year image),70.0,70.0,70.0,70.0,70.0,70.0,Imagen,70.0,0.0,0.0
-10,Asia-Pacifc,Internet, Online Orders (000s),225.0,225.0,225.0,225.0,225.0,225.0,Volumen,225.0,0.0,0.0
-10,Asia-Pacifc,Internet, Pairs Sold (000s),225.0,225.0,225.0,225.0,225.0,225.0,Volumen,225.0,0.0,0.0
-10,Asia-Pacifc,Internet, Market Share (%),0.2,0.2,0.2,0.2,0.2,0.2,Cuota,0.2,0.0,0.0
-10,Asia-Pacifc,Mayorista, Wholesale Price ($ per pair),48.0,48.0,48.0,48.0,48.0,48.0,Precio,48.0,0.0,0.0
-10,Asia-Pacifc,Mayorista, S/Q Rating (1 to 10 stars),4.0,4.0,4.0,4.0,4.0,4.0,Calidad,4.0,0.0,0.0
-10,Asia-Pacifc,Mayorista, Model Availability,200.0,200.0,200.0,200.0,200.0,200.0,Calidad,200.0,0.0,0.0
-10,Asia-Pacifc,Mayorista, Brand Advertising ($000s),8000.0,8000.0,8000.0,8000.0,8000.0,8000.0,Imagen,8000.0,0.0,0.0
-10,Asia-Pacifc,Mayorista, Rebate Offer ($ per pair),5.0,5.0,5.0,5.0,5.0,5.0,Precio,5.0,0.0,0.0
-10,Asia-Pacifc,Mayorista, Delivery Time (weeks),3.0,3.0,3.0,3.0,3.0,3.0,Marketing,3.0,0.0,0.0
-10,Asia-Pacifc,Mayorista, Retailer Support ($ per outlet),2750.0,2750.0,2750.0,2750.0,2750.0,2750.0,Marketing,2750.0,0.0,0.0
-10,Asia-Pacifc,Mayorista, Retail Outlets,700.0,700.0,700.0,700.0,700.0,700.0,Marketing,700.0,0.0,0.0
-10,Asia-Pacifc,Mayorista, Celebrity Appeal,0.0,0.0,0.0,0.0,0.0,0.0,Imagen,0.0,0.0,
-10,Asia-Pacifc,Mayorista, Brand Reputation (prior-year image),70.0,70.0,70.0,70.0,70.0,70.0,Imagen,70.0,0.0,0.0
-10,Asia-Pacifc,Mayorista, Pairs Demanded (000s),1275.0,1275.0,1275.0,1275.0,1275.0,1275.0,Volumen,1275.0,0.0,0.0
-10,Asia-Pacifc,Mayorista,   Gained / Lost (due to stockouts),0.0,0.0,0.0,0.0,0.0,0.0,Volumen,0.0,0.0,
-10,Asia-Pacifc,Mayorista, Pairs Sold (000s),1275.0,1275.0,1275.0,1275.0,1275.0,1275.0,Volumen,1275.0,0.0,0.0
-10,Asia-Pacifc,Mayorista, Market Share (%),0.2,0.2,0.2,0.2,0.2,0.2,Cuota,0.2,0.0,0.0
-10,Asia-Pacifc,Privada, Offer Price (max = $40.00),32.0,32.0,32.0,32.0,32.0,32.0,Precio,32.0,0.0,0.0
-10,Asia-Pacifc,Privada, S/Q Rating (min = 3.0 stars),3.0,3.0,3.0,3.0,3.0,3.0,Calidad,3.0,0.0,0.0
-10,Asia-Pacifc,Privada, Pairs Offered (000s),200.0,200.0,200.0,200.0,200.0,200.0,Volumen,200.0,0.0,0.0
-10,Asia-Pacifc,Privada, Pairs Sold (000s),200.0,200.0,200.0,200.0,200.0,200.0,Volumen,200.0,0.0,0.0
-10,Asia-Pacifc,Privada, Market Share (%),0.2,0.2,0.2,0.2,0.2,0.2,Cuota,0.2,0.0,0.0
-10,Latin America,Internet, Retail Price ($ per pair),72.0,72.0,72.0,72.0,72.0,72.0,Precio,72.0,0.0,0.0
-10,Latin America,Internet, Search Engine Advert. ($000s),4000.0,4000.0,4000.0,4000.0,4000.0,4000.0,Imagen,4000.0,0.0,0.0
-10,Latin America,Internet, Free Shipping,0.0,0.0,0.0,0.0,0.0,0.0,Marketing,0.0,0.0,
-10,Latin America,Internet, S/Q Rating (1 to 10 stars),4.0,4.0,4.0,4.0,4.0,4.0,Calidad,4.0,0.0,0.0
-10,Latin America,Internet, Model Availability,200.0,200.0,200.0,200.0,200.0,200.0,Calidad,200.0,0.0,0.0
-10,Latin America,Internet, Brand Advertising ($000s),7500.0,7500.0,7500.0,7500.0,7500.0,7500.0,Imagen,7500.0,0.0,0.0
-10,Latin America,Internet, Celebrity Appeal,0.0,0.0,0.0,0.0,0.0,0.0,Imagen,0.0,0.0,
-10,Latin America,Internet, Brand Reputation (prior-year image),70.0,70.0,70.0,70.0,70.0,70.0,Imagen,70.0,0.0,0.0
-10,Latin America,Internet, Online Orders (000s),225.0,225.0,225.0,225.0,225.0,225.0,Volumen,225.0,0.0,0.0
-10,Latin America,Internet, Pairs Sold (000s),225.0,225.0,225.0,225.0,225.0,225.0,Volumen,225.0,0.0,0.0
-10,Latin America,Internet, Market Share (%),0.2,0.2,0.2,0.2,0.2,0.2,Cuota,0.2,0.0,0.0
-10,Latin America,Mayorista, Wholesale Price ($ per pair),53.0,53.0,53.0,53.0,53.0,53.0,Precio,53.0,0.0,0.0
-10,Latin America,Mayorista, S/Q Rating (1 to 10 stars),4.0,4.0,4.0,4.0,4.0,4.0,Calidad,4.0,0.0,0.0
-10,Latin America,Mayorista, Model Availability,200.0,200.0,200.0,200.0,200.0,200.0,Calidad,200.0,0.0,0.0
-10,Latin America,Mayorista, Brand Advertising ($000s),7500.0,7500.0,7500.0,7500.0,7500.0,7500.0,Imagen,7500.0,0.0,0.0
-10,Latin America,Mayorista, Rebate Offer ($ per pair),5.0,5.0,5.0,5.0,5.0,5.0,Precio,5.0,0.0,0.0
-10,Latin America,Mayorista, Delivery Time (weeks),3.0,3.0,3.0,3.0,3.0,3.0,Marketing,3.0,0.0,0.0
-10,Latin America,Mayorista, Retailer Support ($ per outlet),2750.0,2750.0,2750.0,2750.0,2750.0,2750.0,Marketing,2750.0,0.0,0.0
-10,Latin America,Mayorista, Retail Outlets,700.0,700.0,700.0,700.0,700.0,700.0,Marketing,700.0,0.0,0.0
-10,Latin America,Mayorista, Celebrity Appeal,0.0,0.0,0.0,0.0,0.0,0.0,Imagen,0.0,0.0,
-10,Latin America,Mayorista, Brand Reputation (prior-year image),70.0,70.0,70.0,70.0,70.0,70.0,Imagen,70.0,0.0,0.0
-10,Latin America,Mayorista, Pairs Demanded (000s),1275.0,1275.0,1275.0,1275.0,1275.0,1275.0,Volumen,1275.0,0.0,0.0
-10,Latin America,Mayorista,   Gained / Lost (due to stockouts),0.0,0.0,0.0,0.0,0.0,0.0,Volumen,0.0,0.0,
-10,Latin America,Mayorista, Pairs Sold (000s),1275.0,1275.0,1275.0,1275.0,1275.0,1275.0,Volumen,1275.0,0.0,0.0
-10,Latin America,Mayorista, Market Share (%),0.2,0.2,0.2,0.2,0.2,0.2,Cuota,0.2,0.0,0.0
-10,Latin America,Privada, Offer Price (max = $40.00),37.0,37.0,37.0,37.0,37.0,37.0,Precio,37.0,0.0,0.0
-10,Latin America,Privada, S/Q Rating (min = 3.0 stars),3.0,3.0,3.0,3.0,3.0,3.0,Calidad,3.0,0.0,0.0
-10,Latin America,Privada, Pairs Offered (000s),200.0,200.0,200.0,200.0,200.0,200.0,Volumen,200.0,0.0,0.0
-10,Latin America,Privada, Pairs Sold (000s),200.0,200.0,200.0,200.0,200.0,200.0,Volumen,200.0,0.0,0.0
-10,Latin America,Privada, Market Share (%),0.2,0.2,0.2,0.2,0.2,0.2,Cuota,0.2,0.0,0.0
+Año,Región,Canal,Tipo,Métrica,A,B,C,D,E,AVG,AVG_otros,diferencia,diferencia_porcentaje
+10,North America,Internet,Precio, Retail Price ($ per pair),67.0,67.0,67.0,67.0,67.0,67.0,67.0,0.0,0.0
+10,North America,Internet,Imagen, Search Engine Advert. ($000s),5000.0,5000.0,5000.0,5000.0,5000.0,5000.0,5000.0,0.0,0.0
+10,North America,Internet,Marketing, Free Shipping,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+10,North America,Internet,Calidad, S/Q Rating (1 to 10 stars),4.0,4.0,4.0,4.0,4.0,4.0,4.0,0.0,0.0
+10,North America,Internet,Calidad, Model Availability,200.0,200.0,200.0,200.0,200.0,200.0,200.0,0.0,0.0
+10,North America,Internet,Imagen, Brand Advertising ($000s),10000.0,10000.0,10000.0,10000.0,10000.0,10000.0,10000.0,0.0,0.0
+10,North America,Internet,Imagen, Celebrity Appeal,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+10,North America,Internet,Imagen, Brand Reputation (prior-year image),70.0,70.0,70.0,70.0,70.0,70.0,70.0,0.0,0.0
+10,North America,Internet,Volumen, Online Orders (000s),353.0,353.0,353.0,353.0,353.0,353.0,353.0,0.0,0.0
+10,North America,Internet,Volumen, Pairs Sold (000s)_Internet,353.0,353.0,353.0,353.0,353.0,353.0,353.0,0.0,0.0
+10,North America,Internet,Cuota, Market Share (%)_Internet,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.0,0.0
+10,North America,Mayorista,Precio, Wholesale Price ($ per pair),48.0,48.0,48.0,48.0,48.0,48.0,48.0,0.0,0.0
+10,North America,Mayorista,Calidad, S/Q Rating (1 to 10 stars),4.0,4.0,4.0,4.0,4.0,4.0,4.0,0.0,0.0
+10,North America,Mayorista,Calidad, Model Availability,200.0,200.0,200.0,200.0,200.0,200.0,200.0,0.0,0.0
+10,North America,Mayorista,Imagen, Brand Advertising ($000s),10000.0,10000.0,10000.0,10000.0,10000.0,10000.0,10000.0,0.0,0.0
+10,North America,Mayorista,Precio, Rebate Offer ($ per pair),5.0,5.0,5.0,5.0,5.0,5.0,5.0,0.0,0.0
+10,North America,Mayorista,Marketing, Delivery Time (weeks),3.0,3.0,3.0,3.0,3.0,3.0,3.0,0.0,0.0
+10,North America,Mayorista,Marketing, Retailer Support ($ per outlet),4000.0,4000.0,4000.0,4000.0,4000.0,4000.0,4000.0,0.0,0.0
+10,North America,Mayorista,Marketing, Retail Outlets,1000.0,1000.0,1000.0,1000.0,1000.0,1000.0,1000.0,0.0,0.0
+10,North America,Mayorista,Imagen, Celebrity Appeal,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+10,North America,Mayorista,Imagen, Brand Reputation (prior-year image),70.0,70.0,70.0,70.0,70.0,70.0,70.0,0.0,0.0
+10,North America,Mayorista,Volumen, Pairs Demanded (000s),1997.0,1997.0,1997.0,1997.0,1997.0,1997.0,1997.0,0.0,0.0
+10,North America,Mayorista,Volumen,   Gained / Lost (due to stockouts),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+10,North America,Mayorista,Volumen, Pairs Sold (000s)_Mayorista,1997.0,1997.0,1997.0,1997.0,1997.0,1997.0,1997.0,0.0,0.0
+10,North America,Mayorista,Cuota, Market Share (%)_Mayorista,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.0,0.0
+10,North America,Privada,Precio, Offer Price (max = $40.00),32.0,32.0,32.0,32.0,32.0,32.0,32.0,0.0,0.0
+10,North America,Privada,Calidad, S/Q Rating (min = 3.0 stars),3.0,3.0,3.0,3.0,3.0,3.0,3.0,0.0,0.0
+10,North America,Privada,Volumen, Pairs Offered (000s),200.0,200.0,200.0,200.0,200.0,200.0,200.0,0.0,0.0
+10,North America,Privada,Volumen, Pairs Sold (000s)_Privada,200.0,200.0,200.0,200.0,200.0,200.0,200.0,0.0,0.0
+10,North America,Privada,Cuota, Market Share (%)_Privada,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.0,0.0
+10,Europe-Africa,Internet,Precio, Retail Price ($ per pair),72.0,72.0,72.0,72.0,72.0,72.0,72.0,0.0,0.0
+10,Europe-Africa,Internet,Imagen, Search Engine Advert. ($000s),4500.0,4500.0,4500.0,4500.0,4500.0,4500.0,4500.0,0.0,0.0
+10,Europe-Africa,Internet,Marketing, Free Shipping,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+10,Europe-Africa,Internet,Calidad, S/Q Rating (1 to 10 stars),4.0,4.0,4.0,4.0,4.0,4.0,4.0,0.0,0.0
+10,Europe-Africa,Internet,Calidad, Model Availability,200.0,200.0,200.0,200.0,200.0,200.0,200.0,0.0,0.0
+10,Europe-Africa,Internet,Imagen, Brand Advertising ($000s),9000.0,9000.0,9000.0,9000.0,9000.0,9000.0,9000.0,0.0,0.0
+10,Europe-Africa,Internet,Imagen, Celebrity Appeal,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+10,Europe-Africa,Internet,Imagen, Brand Reputation (prior-year image),70.0,70.0,70.0,70.0,70.0,70.0,70.0,0.0,0.0
+10,Europe-Africa,Internet,Volumen, Online Orders (000s),300.0,300.0,300.0,300.0,300.0,300.0,300.0,0.0,0.0
+10,Europe-Africa,Internet,Volumen, Pairs Sold (000s)_Internet,300.0,300.0,300.0,300.0,300.0,300.0,300.0,0.0,0.0
+10,Europe-Africa,Internet,Cuota, Market Share (%)_Internet,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.0,0.0
+10,Europe-Africa,Mayorista,Precio, Wholesale Price ($ per pair),53.0,53.0,53.0,53.0,53.0,53.0,53.0,0.0,0.0
+10,Europe-Africa,Mayorista,Calidad, S/Q Rating (1 to 10 stars),4.0,4.0,4.0,4.0,4.0,4.0,4.0,0.0,0.0
+10,Europe-Africa,Mayorista,Calidad, Model Availability,200.0,200.0,200.0,200.0,200.0,200.0,200.0,0.0,0.0
+10,Europe-Africa,Mayorista,Imagen, Brand Advertising ($000s),9000.0,9000.0,9000.0,9000.0,9000.0,9000.0,9000.0,0.0,0.0
+10,Europe-Africa,Mayorista,Precio, Rebate Offer ($ per pair),5.0,5.0,5.0,5.0,5.0,5.0,5.0,0.0,0.0
+10,Europe-Africa,Mayorista,Marketing, Delivery Time (weeks),3.0,3.0,3.0,3.0,3.0,3.0,3.0,0.0,0.0
+10,Europe-Africa,Mayorista,Marketing, Retailer Support ($ per outlet),4000.0,4000.0,4000.0,4000.0,4000.0,4000.0,4000.0,0.0,0.0
+10,Europe-Africa,Mayorista,Marketing, Retail Outlets,1000.0,1000.0,1000.0,1000.0,1000.0,1000.0,1000.0,0.0,0.0
+10,Europe-Africa,Mayorista,Imagen, Celebrity Appeal,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+10,Europe-Africa,Mayorista,Imagen, Brand Reputation (prior-year image),70.0,70.0,70.0,70.0,70.0,70.0,70.0,0.0,0.0
+10,Europe-Africa,Mayorista,Volumen, Pairs Demanded (000s),1700.0,1700.0,1700.0,1700.0,1700.0,1700.0,1700.0,0.0,0.0
+10,Europe-Africa,Mayorista,Volumen,   Gained / Lost (due to stockouts),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+10,Europe-Africa,Mayorista,Volumen, Pairs Sold (000s)_Mayorista,1700.0,1700.0,1700.0,1700.0,1700.0,1700.0,1700.0,0.0,0.0
+10,Europe-Africa,Mayorista,Cuota, Market Share (%)_Mayorista,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.0,0.0
+10,Europe-Africa,Privada,Precio, Offer Price (max = $40.00),37.0,37.0,37.0,37.0,37.0,37.0,37.0,0.0,0.0
+10,Europe-Africa,Privada,Calidad, S/Q Rating (min = 3.0 stars),3.0,3.0,3.0,3.0,3.0,3.0,3.0,0.0,0.0
+10,Europe-Africa,Privada,Volumen, Pairs Offered (000s),200.0,200.0,200.0,200.0,200.0,200.0,200.0,0.0,0.0
+10,Europe-Africa,Privada,Volumen, Pairs Sold (000s)_Privada,200.0,200.0,200.0,200.0,200.0,200.0,200.0,0.0,0.0
+10,Europe-Africa,Privada,Cuota, Market Share (%)_Privada,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.0,0.0
+10,Asia-Pacifc,Internet,Precio, Retail Price ($ per pair),67.0,67.0,67.0,67.0,67.0,67.0,67.0,0.0,0.0
+10,Asia-Pacifc,Internet,Imagen, Search Engine Advert. ($000s),4000.0,4000.0,4000.0,4000.0,4000.0,4000.0,4000.0,0.0,0.0
+10,Asia-Pacifc,Internet,Marketing, Free Shipping,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+10,Asia-Pacifc,Internet,Calidad, S/Q Rating (1 to 10 stars),4.0,4.0,4.0,4.0,4.0,4.0,4.0,0.0,0.0
+10,Asia-Pacifc,Internet,Calidad, Model Availability,200.0,200.0,200.0,200.0,200.0,200.0,200.0,0.0,0.0
+10,Asia-Pacifc,Internet,Imagen, Brand Advertising ($000s),8000.0,8000.0,8000.0,8000.0,8000.0,8000.0,8000.0,0.0,0.0
+10,Asia-Pacifc,Internet,Imagen, Celebrity Appeal,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+10,Asia-Pacifc,Internet,Imagen, Brand Reputation (prior-year image),70.0,70.0,70.0,70.0,70.0,70.0,70.0,0.0,0.0
+10,Asia-Pacifc,Internet,Volumen, Online Orders (000s),225.0,225.0,225.0,225.0,225.0,225.0,225.0,0.0,0.0
+10,Asia-Pacifc,Internet,Volumen, Pairs Sold (000s)_Internet,225.0,225.0,225.0,225.0,225.0,225.0,225.0,0.0,0.0
+10,Asia-Pacifc,Internet,Cuota, Market Share (%)_Internet,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.0,0.0
+10,Asia-Pacifc,Mayorista,Precio, Wholesale Price ($ per pair),48.0,48.0,48.0,48.0,48.0,48.0,48.0,0.0,0.0
+10,Asia-Pacifc,Mayorista,Calidad, S/Q Rating (1 to 10 stars),4.0,4.0,4.0,4.0,4.0,4.0,4.0,0.0,0.0
+10,Asia-Pacifc,Mayorista,Calidad, Model Availability,200.0,200.0,200.0,200.0,200.0,200.0,200.0,0.0,0.0
+10,Asia-Pacifc,Mayorista,Imagen, Brand Advertising ($000s),8000.0,8000.0,8000.0,8000.0,8000.0,8000.0,8000.0,0.0,0.0
+10,Asia-Pacifc,Mayorista,Precio, Rebate Offer ($ per pair),5.0,5.0,5.0,5.0,5.0,5.0,5.0,0.0,0.0
+10,Asia-Pacifc,Mayorista,Marketing, Delivery Time (weeks),3.0,3.0,3.0,3.0,3.0,3.0,3.0,0.0,0.0
+10,Asia-Pacifc,Mayorista,Marketing, Retailer Support ($ per outlet),2750.0,2750.0,2750.0,2750.0,2750.0,2750.0,2750.0,0.0,0.0
+10,Asia-Pacifc,Mayorista,Marketing, Retail Outlets,700.0,700.0,700.0,700.0,700.0,700.0,700.0,0.0,0.0
+10,Asia-Pacifc,Mayorista,Imagen, Celebrity Appeal,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+10,Asia-Pacifc,Mayorista,Imagen, Brand Reputation (prior-year image),70.0,70.0,70.0,70.0,70.0,70.0,70.0,0.0,0.0
+10,Asia-Pacifc,Mayorista,Volumen, Pairs Demanded (000s),1275.0,1275.0,1275.0,1275.0,1275.0,1275.0,1275.0,0.0,0.0
+10,Asia-Pacifc,Mayorista,Volumen,   Gained / Lost (due to stockouts),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+10,Asia-Pacifc,Mayorista,Volumen, Pairs Sold (000s)_Mayorista,1275.0,1275.0,1275.0,1275.0,1275.0,1275.0,1275.0,0.0,0.0
+10,Asia-Pacifc,Mayorista,Cuota, Market Share (%)_Mayorista,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.0,0.0
+10,Asia-Pacifc,Privada,Precio, Offer Price (max = $40.00),32.0,32.0,32.0,32.0,32.0,32.0,32.0,0.0,0.0
+10,Asia-Pacifc,Privada,Calidad, S/Q Rating (min = 3.0 stars),3.0,3.0,3.0,3.0,3.0,3.0,3.0,0.0,0.0
+10,Asia-Pacifc,Privada,Volumen, Pairs Offered (000s),200.0,200.0,200.0,200.0,200.0,200.0,200.0,0.0,0.0
+10,Asia-Pacifc,Privada,Volumen, Pairs Sold (000s)_Privada,200.0,200.0,200.0,200.0,200.0,200.0,200.0,0.0,0.0
+10,Asia-Pacifc,Privada,Cuota, Market Share (%)_Privada,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.0,0.0
+10,Latin America,Internet,Precio, Retail Price ($ per pair),72.0,72.0,72.0,72.0,72.0,72.0,72.0,0.0,0.0
+10,Latin America,Internet,Imagen, Search Engine Advert. ($000s),4000.0,4000.0,4000.0,4000.0,4000.0,4000.0,4000.0,0.0,0.0
+10,Latin America,Internet,Marketing, Free Shipping,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+10,Latin America,Internet,Calidad, S/Q Rating (1 to 10 stars),4.0,4.0,4.0,4.0,4.0,4.0,4.0,0.0,0.0
+10,Latin America,Internet,Calidad, Model Availability,200.0,200.0,200.0,200.0,200.0,200.0,200.0,0.0,0.0
+10,Latin America,Internet,Imagen, Brand Advertising ($000s),7500.0,7500.0,7500.0,7500.0,7500.0,7500.0,7500.0,0.0,0.0
+10,Latin America,Internet,Imagen, Celebrity Appeal,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+10,Latin America,Internet,Imagen, Brand Reputation (prior-year image),70.0,70.0,70.0,70.0,70.0,70.0,70.0,0.0,0.0
+10,Latin America,Internet,Volumen, Online Orders (000s),225.0,225.0,225.0,225.0,225.0,225.0,225.0,0.0,0.0
+10,Latin America,Internet,Volumen, Pairs Sold (000s)_Internet,225.0,225.0,225.0,225.0,225.0,225.0,225.0,0.0,0.0
+10,Latin America,Internet,Cuota, Market Share (%)_Internet,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.0,0.0
+10,Latin America,Mayorista,Precio, Wholesale Price ($ per pair),53.0,53.0,53.0,53.0,53.0,53.0,53.0,0.0,0.0
+10,Latin America,Mayorista,Calidad, S/Q Rating (1 to 10 stars),4.0,4.0,4.0,4.0,4.0,4.0,4.0,0.0,0.0
+10,Latin America,Mayorista,Calidad, Model Availability,200.0,200.0,200.0,200.0,200.0,200.0,200.0,0.0,0.0
+10,Latin America,Mayorista,Imagen, Brand Advertising ($000s),7500.0,7500.0,7500.0,7500.0,7500.0,7500.0,7500.0,0.0,0.0
+10,Latin America,Mayorista,Precio, Rebate Offer ($ per pair),5.0,5.0,5.0,5.0,5.0,5.0,5.0,0.0,0.0
+10,Latin America,Mayorista,Marketing, Delivery Time (weeks),3.0,3.0,3.0,3.0,3.0,3.0,3.0,0.0,0.0
+10,Latin America,Mayorista,Marketing, Retailer Support ($ per outlet),2750.0,2750.0,2750.0,2750.0,2750.0,2750.0,2750.0,0.0,0.0
+10,Latin America,Mayorista,Marketing, Retail Outlets,700.0,700.0,700.0,700.0,700.0,700.0,700.0,0.0,0.0
+10,Latin America,Mayorista,Imagen, Celebrity Appeal,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+10,Latin America,Mayorista,Imagen, Brand Reputation (prior-year image),70.0,70.0,70.0,70.0,70.0,70.0,70.0,0.0,0.0
+10,Latin America,Mayorista,Volumen, Pairs Demanded (000s),1275.0,1275.0,1275.0,1275.0,1275.0,1275.0,1275.0,0.0,0.0
+10,Latin America,Mayorista,Volumen,   Gained / Lost (due to stockouts),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+10,Latin America,Mayorista,Volumen, Pairs Sold (000s)_Mayorista,1275.0,1275.0,1275.0,1275.0,1275.0,1275.0,1275.0,0.0,0.0
+10,Latin America,Mayorista,Cuota, Market Share (%)_Mayorista,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.0,0.0
+10,Latin America,Privada,Precio, Offer Price (max = $40.00),37.0,37.0,37.0,37.0,37.0,37.0,37.0,0.0,0.0
+10,Latin America,Privada,Calidad, S/Q Rating (min = 3.0 stars),3.0,3.0,3.0,3.0,3.0,3.0,3.0,0.0,0.0
+10,Latin America,Privada,Volumen, Pairs Offered (000s),200.0,200.0,200.0,200.0,200.0,200.0,200.0,0.0,0.0
+10,Latin America,Privada,Volumen, Pairs Sold (000s)_Privada,200.0,200.0,200.0,200.0,200.0,200.0,200.0,0.0,0.0
+10,Latin America,Privada,Cuota, Market Share (%)_Privada,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.0,0.0
