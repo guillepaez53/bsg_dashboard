@@ -153,7 +153,7 @@ if not df_region.empty:
     for metrica in selected_metricas:
         df_metrica = df_region[df_region["Métrica"] == metrica]
 
-        # Ajustar las proporciones de las columnas (1.5:1 para gráfico:KPI)
+        # Ajustar las proporciones de las columnas (2:1 para gráfico:KPI)
         col_graph, col_kpi = st.columns([1.5, 1])
 
         with col_graph:
@@ -197,9 +197,13 @@ if not df_region.empty:
             # Mostrar el gráfico en Streamlit
             st.plotly_chart(fig, use_container_width=True)
 
-        # KPI de diferencia y diferencia_porcentaje
+        # Agregar un espaciador para alinear correctamente la tabla con el gráfico
         with col_kpi:
+            st.markdown("<br>", unsafe_allow_html=True)  # Espaciador
+            st.markdown("<br>", unsafe_allow_html=True)  # Espaciador
             st.markdown(f"###### Empresa D vs AVG_otros")  # Subtítulo del KPI
+            # st.markdown("<br>", unsafe_allow_html=True)  # Espaciador
+            st.markdown("<br>", unsafe_allow_html=True)  # Espaciador
             kpi_data = {"Región": [], "Diferencia": [], "Dif. %": []}
             if selected_region == "Todas":
                 for _, row in df_metrica.iterrows():
