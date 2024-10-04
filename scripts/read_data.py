@@ -56,16 +56,12 @@ for i, k in enumerate(regiones_firstkeys):
 
 cod_regiones[regiones_lastkey][2] = len(df_messy.columns) - 2
 
-print(cod_regiones)
-
 regiones = {
     "NA": pd.DataFrame(),
     "EA": pd.DataFrame(),
     "AP": pd.DataFrame(),
     "LA": pd.DataFrame(),
 }
-
-print(regiones)
 
 for k in regiones.keys():
 
@@ -80,9 +76,9 @@ for k in regiones.keys():
     regiones[k].loc[0, "Unnamed: 1"] = "Métrica"
     regiones[k].iloc[0, -1:] = "Canal"
 
-    regiones[k].iloc[1:15, -1:] = ["Internet"] * 14
-    regiones[k].iloc[19:38, -1:] = ["Mayorista"] * 19
-    regiones[k].iloc[42:48, -1:] = ["Privada"] * 6
+    regiones[k].iloc[1:15, -1:] = ["2 - Internet"] * 14
+    regiones[k].iloc[19:38, -1:] = ["1 - Mayorista"] * 19
+    regiones[k].iloc[42:48, -1:] = ["3 - Privada"] * 6
 
     regiones[k] = regiones[k][regiones[k]["Unnamed: 1"] != " "]
 
@@ -92,6 +88,8 @@ for k in regiones.keys():
     regiones[k].drop(columns=NO_COMPANIES, inplace=True)
 
     regiones[k]["Tipo"] = regiones[k]["Métrica"].map(METRICAS)
+
+    regiones[k].sort_values(by=["Canal", "Tipo"], inplace=True)
 
     regiones[k].loc[
         regiones[k]["Métrica"].isin([" Market Share (%)", " Pairs Sold (000s)"]),
@@ -131,8 +129,6 @@ df.reset_index(drop=True, inplace=True)
 df.loc[:, "Año"] = year
 first_column = df.pop("Año")
 df.insert(0, "Año", first_column)
-
-print(df.columns)
 
 df.to_csv(os.path.join(DATA_PROCESSED_DIR, "ci_" + str(year) + ".csv"), index=False)
 df.to_excel(os.path.join(DATA_PROCESSED_DIR, "ci_" + str(year) + ".xlsx"), index=False)
