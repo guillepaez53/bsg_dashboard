@@ -3,7 +3,7 @@ import plotly.graph_objects as go
 import streamlit as st
 import os
 import sys
-
+import plotly.colors as pc
 
 # Configuración de la página para usar todo el ancho
 st.set_page_config(layout="wide")
@@ -12,7 +12,6 @@ st.set_page_config(layout="wide")
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, ".."))
 sys.path.append(project_root)
-
 
 from config.constants import DATA_ACCUMULATED_DIR, COMPANY, COMPANIES
 
@@ -28,6 +27,25 @@ def cargar_datos():
 
 df_accumulated = cargar_datos()
 
+# Definir colores consistentes para cada empresa
+base_colors = {
+    "A": "#1f77b4",
+    "B": "#ff7f0e",
+    "C": "#2ca02c",
+    "D": "#d62728",
+    "E": "#9467bd",
+    "AVG": "#8c564b",
+    "AVG_otros": "#e377c2",
+}
+
+# Definir tipos de línea para cada región
+line_styles = ["solid", "dot", "dash", "longdash", "dashdot"]
+
+# Crear un mapeo de estilo de línea para cada región
+line_style_mapping = {
+    region: line_styles[i % len(line_styles)]
+    for i, region in enumerate(df_accumulated["Región"].unique())
+}
 
 # --- PESTAÑA UNIFICADA: ANÁLISIS IC ---
 
@@ -172,6 +190,7 @@ if is_transversal:
                                         x=[region],
                                         y=[df_region[company].mean()],
                                         name=f"{company} - {region}",
+                                        marker_color=base_colors[company],
                                     )
                                 )
                     fig_1.update_layout(
@@ -199,6 +218,7 @@ if is_transversal:
                                         x=[region],
                                         y=[df_region[company].mean()],
                                         name=f"{company} - {region}",
+                                        marker_color=base_colors[company],
                                     )
                                 )
                     fig_2.update_layout(
@@ -233,6 +253,7 @@ if is_transversal:
                                     x=[region],
                                     y=[df_region[company].mean()],
                                     name=f"{company} - {region}",
+                                    marker_color=base_colors[company],
                                 )
                             )
                 fig.update_layout(
@@ -291,6 +312,10 @@ else:
                                         y=df_company[company],
                                         mode="lines",
                                         name=f"{company} - {region}",
+                                        line=dict(
+                                            color=base_colors[company],
+                                            dash=line_style_mapping[region],
+                                        ),
                                     )
                                 )
                     fig_1.update_layout(
@@ -323,6 +348,10 @@ else:
                                         y=df_company[company],
                                         mode="lines",
                                         name=f"{company} - {region}",
+                                        line=dict(
+                                            color=base_colors[company],
+                                            dash=line_style_mapping[region],
+                                        ),
                                     )
                                 )
                     fig_2.update_layout(
@@ -363,6 +392,10 @@ else:
                                     y=df_company[company],
                                     mode="lines",
                                     name=f"{company} - {region}",
+                                    line=dict(
+                                        color=base_colors[company],
+                                        dash=line_style_mapping[region],
+                                    ),
                                 )
                             )
 
