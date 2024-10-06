@@ -4,6 +4,7 @@ import streamlit as st
 import os
 import sys
 
+
 # Configuración de la página para usar todo el ancho
 st.set_page_config(layout="wide")
 
@@ -11,6 +12,7 @@ st.set_page_config(layout="wide")
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, ".."))
 sys.path.append(project_root)
+
 
 from config.constants import DATA_ACCUMULATED_DIR, COMPANY, COMPANIES
 
@@ -26,165 +28,223 @@ def cargar_datos():
 
 df_accumulated = cargar_datos()
 
-# Agregar pestañas
-tabs = st.tabs(["Inteligencia Competitiva", "IC - Temporal"])
 
-# --- PESTAÑA 1: ANÁLISIS TRANSVERSAL ---
-with tabs[0]:
+# --- PESTAÑA UNIFICADA: ANÁLISIS IC ---
 
-    st.title("BSG Dashboard: Inteligencia Competitiva")
+st.title("BSG Dashboard: Inteligencia Competitiva")
 
-    st.markdown("<br>", unsafe_allow_html=True)
+st.markdown("<br>", unsafe_allow_html=True)
 
-    # Primera fila - Año, Tipo de Comparación y Checkboxes para las Regiones
-    col1, col2, col3 = st.columns([1, 6, 7])
+st.markdown("###### Regiones, Empresas y Rango de años a analizar")
 
-    with col1:
-        years = sorted(df_accumulated["Año"].unique(), reverse=True)
-        selected_year = st.selectbox("Año", years, index=0, key="year_transversal")
-        df_filtrado = df_accumulated[df_accumulated["Año"] == selected_year]
+col1, col2 = st.columns(2)
 
-    with col2:
-        tipo_comparacion = st.selectbox(
-            "Tipo de Comparación",
-            [
-                f"Comparar {COMPANY} contra el promedio de la competencia (AVG_otros)",
-                "Comparar las 5 empresas",
-                f"Comparar {COMPANY} contra el promedio general (AVG)",
-            ],
-            index=0,
+with col1:
+    # Checkboxes para las Regiones
+    regiones = df_accumulated["Región"].unique()
+    region_selected = []
+    cols = st.columns(len(regiones))
+
+    for i, region in enumerate(regiones):
+        # Asignar una clave única específica
+        if cols[i].checkbox(region, value=True, key=f"region_temporal_{region}"):
+            region_selected.append(region)
+
+    # Checkbox para seleccionar empresas y agregados
+    with st.container():
+        cols = st.columns([1, 1, 1, 1, 1, 3, 2])
+        A_selected = cols[0].checkbox("A", value=False)
+        B_selected = cols[1].checkbox("B", value=False)
+        C_selected = cols[2].checkbox("C", value=False)
+        D_selected = cols[3].checkbox("D", value=True)  # Por defecto seleccionado
+        E_selected = cols[4].checkbox("E", value=False)
+        AVG_otros_selected = cols[5].checkbox(
+            "AVG_otros", value=True
+        )  # Por defecto seleccionado
+        AVG_selected = cols[6].checkbox("AVG", value=False)
+
+with col2:
+    # Slider para seleccionar el rango de años (Inicio y Fin)
+    if df_accumulated["Año"].max() > df_accumulated["Año"].min():
+        start_year, end_year = st.slider(
+            "Seleccionar el rango de años a analizar",
+            min_value=int(df_accumulated["Año"].min()),
+            max_value=int(df_accumulated["Año"].max()),
+            value=(
+                int(df_accumulated["Año"].min()),
+                int(df_accumulated["Año"].max()),
+            ),
+            step=1,
+            key="slider_temporal",
         )
-
-    with col3:
-        st.markdown("###### Selección de Regiones")
-        regiones = df_filtrado["Región"].unique()
-        region_selected = []
-        cols = st.columns(len(regiones))
-
-        for i, region in enumerate(regiones):
-            # Asignar una clave única específica para la pestaña transversal
-            if cols[i].checkbox(region, value=True, key=f"region_transversal_{region}"):
-                region_selected.append(region)
-
-    st.markdown("<br>", unsafe_allow_html=True)
-
-    # Tercera fila - Selectbox de Canal y Tipo
-    col1, col2 = st.columns(2)
-
-    with col1:
-        selected_canal = st.selectbox(
-            "Canal",
-            ["Todas"] + list(df_filtrado["Canal"].unique()),
-            key="canal_transversal",
-        )
-
-    with col2:
-        if selected_canal == "Todas":
-            tipos_disponibles = df_filtrado["Tipo"].unique()
-        else:
-            tipos_disponibles = df_filtrado[df_filtrado["Canal"] == selected_canal][
-                "Tipo"
-            ].unique()
-        selected_tipo = st.selectbox(
-            "Tipo", ["Todas"] + list(tipos_disponibles), key="tipo_transversal"
-        )
-
-    # Cuarta fila - Multiselect de Métricas (dependiendo del Canal y Tipo)
-    if selected_canal == "Todas" and selected_tipo == "Todas":
-        metricas_disponibles = df_filtrado["Métrica"].unique()
-    elif selected_canal == "Todas":
-        metricas_disponibles = df_filtrado[df_filtrado["Tipo"] == selected_tipo][
-            "Métrica"
-        ].unique()
-    elif selected_tipo == "Todas":
-        metricas_disponibles = df_filtrado[df_filtrado["Canal"] == selected_canal][
-            "Métrica"
-        ].unique()
     else:
-        metricas_disponibles = df_filtrado[
-            (df_filtrado["Canal"] == selected_canal)
-            & (df_filtrado["Tipo"] == selected_tipo)
-        ]["Métrica"].unique()
+        start_year = df_accumulated["Año"].min()
+        end_year = df_accumulated["Año"].max()
 
-    # Eliminar duplicados en las métricas disponibles
-    # metricas_disponibles = list(set(metricas_disponibles))
+st.markdown("<br>", unsafe_allow_html=True)
 
-    selected_metricas = st.multiselect(
-        "Métricas",
-        metricas_disponibles,
-        default=metricas_disponibles[0],  # if metricas_disponibles else None,
-        key="metricas_transversal",
+# Segunda fila - Checkboxes de Canal y Tipo
+col1, col2 = st.columns([3, 6])  # Ajustando la proporción para canales y tipos
+
+with col1:
+    st.markdown("###### Selección de Canales")
+    canales_disponibles = df_accumulated["Canal"].unique()
+    canal_selected = []
+    cols_canal = st.columns(len(canales_disponibles))
+
+    for i, canal in enumerate(canales_disponibles):
+        # Checkboxes para los canales
+        if cols_canal[i].checkbox(canal, value=True, key=f"canal_temporal_{canal}"):
+            canal_selected.append(canal)
+
+with col2:
+    st.markdown("###### Selección de Tipos")
+    tipos_disponibles = df_accumulated["Tipo"].unique()
+    tipo_selected = []
+    cols_tipo = st.columns(len(tipos_disponibles))
+
+    for i, tipo in enumerate(tipos_disponibles):
+        # Checkboxes para los tipos
+        if cols_tipo[i].checkbox(tipo, value=True, key=f"tipo_temporal_{tipo}"):
+            tipo_selected.append(tipo)
+
+# Filtrar las métricas disponibles según el canal y tipo seleccionados
+metricas_disponibles_temporal = df_accumulated[
+    (df_accumulated["Canal"].isin(canal_selected))
+    & (df_accumulated["Tipo"].isin(tipo_selected))
+]["Métrica"].unique()
+
+# Tercera fila - Multiselects de Métricas (ahora filtradas por Canal y Tipo)
+col1, col2 = st.columns(2)
+
+with col1:
+    selected_metricas_1 = st.multiselect(
+        "Métricas 1",
+        metricas_disponibles_temporal,
+        default=(
+            metricas_disponibles_temporal[:1]
+            if len(metricas_disponibles_temporal) > 0
+            else None
+        ),
+        key="metricas_1",
+    )
+with col2:
+    selected_metricas_2 = st.multiselect(
+        "Métricas 2",
+        metricas_disponibles_temporal,
+        default=None,
+        key="metricas_2",
     )
 
-    # Aplicar los filtros según la selección
-    df_region = df_filtrado[
-        (df_filtrado["Región"].isin(region_selected))
-        & (
-            df_filtrado["Canal"].isin(
-                [selected_canal]
-                if selected_canal != "Todas"
-                else df_filtrado["Canal"].unique()
-            )
-        )
-        & (
-            df_filtrado["Tipo"].isin(
-                [selected_tipo]
-                if selected_tipo != "Todas"
-                else df_filtrado["Tipo"].unique()
-            )
-        )
-        & (df_filtrado["Métrica"].isin(selected_metricas))
-    ].drop_duplicates(subset=["Métrica", "Región"])
+st.markdown("<br>", unsafe_allow_html=True)
 
-    # Crear gráfico según el tipo de comparación seleccionado
-    if not df_region.empty:
-        for metrica in selected_metricas:
-            df_metrica = df_region[df_region["Métrica"] == metrica]
+# Filtrar el dataframe por los años, regiones seleccionadas y por las métricas
+df_metrica_filtrada_temporal = df_accumulated[
+    (df_accumulated["Año"] >= start_year)
+    & (df_accumulated["Año"] <= end_year)
+    & (df_accumulated["Región"].isin(region_selected))  # Filtro por regiones
+]
+
+# Verificar si es un análisis transversal o temporal
+is_transversal = start_year == end_year
+
+if is_transversal:
+    # Análisis Transversal (Gráfico de Barras)
+    if selected_metricas_1 and selected_metricas_2:
+        # Mostrar dos gráficos en paralelo si ambos multiselects tienen métricas
+        max_len = max(len(selected_metricas_1), len(selected_metricas_2))
+        for i in range(max_len):
+            col_graph1, col_graph2 = st.columns(2)
+
+            if i < len(selected_metricas_1):
+                with col_graph1:
+                    fig_1 = go.Figure()
+                    metrica_1 = selected_metricas_1[i]
+                    df_metrica_1 = df_metrica_filtrada_temporal[
+                        df_metrica_filtrada_temporal["Métrica"] == metrica_1
+                    ]
+                    for region in region_selected:
+                        df_region = df_metrica_1[df_metrica_1["Región"] == region]
+                        for company in COMPANIES + ["AVG", "AVG_otros"]:
+                            if eval(f"{company}_selected"):
+                                fig_1.add_trace(
+                                    go.Bar(
+                                        x=[region],
+                                        y=[df_region[company].mean()],
+                                        name=f"{company} - {region}",
+                                    )
+                                )
+                    fig_1.update_layout(
+                        barmode="group",
+                        title=f"{metrica_1}",
+                        xaxis_title="Regiones",
+                        yaxis_title="Valor de la Métrica",
+                        template="plotly_white",
+                    )
+                    st.plotly_chart(fig_1, use_container_width=True)
+
+            if i < len(selected_metricas_2):
+                with col_graph2:
+                    fig_2 = go.Figure()
+                    metrica_2 = selected_metricas_2[i]
+                    df_metrica_2 = df_metrica_filtrada_temporal[
+                        df_metrica_filtrada_temporal["Métrica"] == metrica_2
+                    ]
+                    for region in region_selected:
+                        df_region = df_metrica_2[df_metrica_2["Región"] == region]
+                        for company in COMPANIES + ["AVG", "AVG_otros"]:
+                            if eval(f"{company}_selected"):
+                                fig_2.add_trace(
+                                    go.Bar(
+                                        x=[region],
+                                        y=[df_region[company].mean()],
+                                        name=f"{company} - {region}",
+                                    )
+                                )
+                    fig_2.update_layout(
+                        barmode="group",
+                        title=f"{metrica_2}",
+                        xaxis_title="Regiones",
+                        yaxis_title="Valor de la Métrica",
+                        template="plotly_white",
+                    )
+                    st.plotly_chart(fig_2, use_container_width=True)
+
+    else:
+        # Si solo hay métricas en uno de los multiselects, mostrar gráfico y tabla
+        metricas_to_plot = selected_metricas_1 or selected_metricas_2
+        for metrica in metricas_to_plot:
+            df_metrica = df_metrica_filtrada_temporal[
+                df_metrica_filtrada_temporal["Métrica"] == metrica
+            ]
 
             st.markdown("<br>", unsafe_allow_html=True)
 
-            # Ajustar las proporciones de las columnas (2:1 para gráfico:KPI)
-            col_graph, col_kpi = st.columns([1.5, 1])
+            col_graph, col_kpi = st.columns(2)
 
             with col_graph:
                 fig = go.Figure()
-
-                if tipo_comparacion == "Comparar las 5 empresas":
-                    for _, row in df_metrica.iterrows():
-                        y = [row[company] for company in COMPANIES]
-                        fig.add_trace(go.Bar(x=COMPANIES, y=y, name=row["Región"]))
-
-                elif (
-                    tipo_comparacion
-                    == f"Comparar {COMPANY} contra el promedio general (AVG)"
-                ):
-                    for _, row in df_metrica.iterrows():
-                        y = [row[COMPANY], row["AVG"]]
-                        fig.add_trace(
-                            go.Bar(x=[COMPANY, "AVG"], y=y, name=row["Región"])
-                        )
-
-                elif (
-                    tipo_comparacion
-                    == f"Comparar {COMPANY} contra el promedio de la competencia (AVG_otros)"
-                ):
-                    for _, row in df_metrica.iterrows():
-                        y = [row[COMPANY], row["AVG_otros"]]
-                        fig.add_trace(
-                            go.Bar(x=[COMPANY, "AVG_otros"], y=y, name=row["Región"])
-                        )
-
+                for region in region_selected:
+                    df_region = df_metrica[df_metrica["Región"] == region]
+                    for company in COMPANIES + ["AVG", "AVG_otros"]:
+                        if eval(f"{company}_selected"):
+                            fig.add_trace(
+                                go.Bar(
+                                    x=[region],
+                                    y=[df_region[company].mean()],
+                                    name=f"{company} - {region}",
+                                )
+                            )
                 fig.update_layout(
                     barmode="group",
                     title=f"{metrica}",
-                    xaxis_title="Empresas",
+                    xaxis_title="Regiones",
                     yaxis_title="Valor de la Métrica",
                     template="plotly_white",
                 )
                 st.plotly_chart(fig, use_container_width=True)
 
             with col_kpi:
-                st.markdown("<br>", unsafe_allow_html=True)
                 st.markdown("<br>", unsafe_allow_html=True)
                 st.markdown(f"###### Empresa D vs AVG_otros")
                 st.markdown("<br>", unsafe_allow_html=True)
@@ -201,264 +261,157 @@ with tabs[0]:
                 kpi_df = pd.DataFrame(kpi_data).reset_index(drop=True)
                 st.dataframe(kpi_df.style.hide(axis="index"), use_container_width=True)
 
+else:
+    # Análisis Temporal (Gráfico de líneas y tabla de variación porcentual)
+    if selected_metricas_1 and selected_metricas_2:
+        # Mostrar dos gráficos en paralelo si ambos multiselects tienen métricas
+        max_len = max(len(selected_metricas_1), len(selected_metricas_2))
+        for i in range(max_len):
+            col_graph1, col_graph2 = st.columns(2)
 
-with tabs[1]:
+            if i < len(selected_metricas_1):
+                with col_graph1:
+                    fig_1 = go.Figure()
+                    metrica_1 = selected_metricas_1[i]
+                    df_metrica_1 = df_metrica_filtrada_temporal[
+                        df_metrica_filtrada_temporal["Métrica"] == metrica_1
+                    ]
+                    for region in region_selected:
+                        df_region = df_metrica_1[df_metrica_1["Región"] == region]
+                        for company in COMPANIES + ["AVG", "AVG_otros"]:
+                            if eval(f"{company}_selected"):
+                                df_company = (
+                                    df_region.groupby("Año")[company]
+                                    .mean()
+                                    .reset_index()
+                                )
+                                fig_1.add_trace(
+                                    go.Scatter(
+                                        x=df_company["Año"],
+                                        y=df_company[company],
+                                        mode="lines",
+                                        name=f"{company} - {region}",
+                                    )
+                                )
+                    fig_1.update_layout(
+                        title=f"Evolución temporal de {metrica_1}",
+                        xaxis_title="Año",
+                        yaxis_title="Valor de la Métrica",
+                        template="plotly_white",
+                    )
+                    st.plotly_chart(fig_1, use_container_width=True)
 
-    st.title("BSG Dashboard: Inteligencia Competitiva - Análisis Temporal")
+            if i < len(selected_metricas_2):
+                with col_graph2:
+                    fig_2 = go.Figure()
+                    metrica_2 = selected_metricas_2[i]
+                    df_metrica_2 = df_metrica_filtrada_temporal[
+                        df_metrica_filtrada_temporal["Métrica"] == metrica_2
+                    ]
+                    for region in region_selected:
+                        df_region = df_metrica_2[df_metrica_2["Región"] == region]
+                        for company in COMPANIES + ["AVG", "AVG_otros"]:
+                            if eval(f"{company}_selected"):
+                                df_company = (
+                                    df_region.groupby("Año")[company]
+                                    .mean()
+                                    .reset_index()
+                                )
+                                fig_2.add_trace(
+                                    go.Scatter(
+                                        x=df_company["Año"],
+                                        y=df_company[company],
+                                        mode="lines",
+                                        name=f"{company} - {region}",
+                                    )
+                                )
+                    fig_2.update_layout(
+                        title=f"Evolución temporal de {metrica_2}",
+                        xaxis_title="Año",
+                        yaxis_title="Valor de la Métrica",
+                        template="plotly_white",
+                    )
+                    st.plotly_chart(fig_2, use_container_width=True)
 
-    st.markdown("<br>", unsafe_allow_html=True)
-
-    st.markdown("###### Rango de años, Empresas y Regiones a analizar")
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-
-        # Checkbox para seleccionar empresas y agregados
-        with st.container():
-            # st.markdown("###### Empresas y Regiones")
-            cols = st.columns([1, 1, 1, 1, 1, 2, 3])
-            A_selected = cols[0].checkbox("A", value=False)
-            B_selected = cols[1].checkbox("B", value=False)
-            C_selected = cols[2].checkbox("C", value=False)
-            D_selected = cols[3].checkbox("D", value=True)  # Por defecto seleccionado
-            E_selected = cols[4].checkbox("E", value=False)
-            AVG_selected = cols[5].checkbox("AVG", value=False)
-            AVG_otros_selected = cols[6].checkbox(
-                "AVG_otros", value=True
-            )  # Por defecto seleccionado
-
-        # Checkboxes para las Regiones y Slider de años en la pestaña temporal
-        regiones = df_accumulated["Región"].unique()
-        region_selected = []
-        cols = st.columns(len(regiones))
-
-        # Checkboxes de regiones
-        for i, region in enumerate(regiones):
-            # Asignar una clave única específica para la pestaña temporal
-            if cols[i].checkbox(region, value=True, key=f"region_temporal_{region}"):
-                region_selected.append(region)
-
-    with col2:
-
-        # Slider para seleccionar el rango de años (Inicio y Fin)
-        if df_accumulated["Año"].max() > df_accumulated["Año"].min():
-            start_year, end_year = st.slider(
-                "Seleccionar el rango de años a analizar",
-                min_value=int(df_accumulated["Año"].min()),
-                max_value=int(df_accumulated["Año"].max()),
-                value=(
-                    int(df_accumulated["Año"].min()),
-                    int(df_accumulated["Año"].max()),
-                ),
-                step=1,
-                key="slider_temporal",
-            )
-        else:
-            start_year = df_accumulated["Año"].min()
-            end_year = df_accumulated["Año"].max()
-
-    st.markdown("<br>", unsafe_allow_html=True)
-
-    # Segunda fila - Selectbox de Canal y Tipo
-    col1, col2 = st.columns(2)
-
-    with col1:
-        selected_canal_temporal = st.selectbox(
-            "Canal",
-            ["Todas"] + list(df_accumulated["Canal"].unique()),
-            key="canal_temporal",
-        )
-
-    with col2:
-        if selected_canal_temporal == "Todas":
-            tipos_disponibles_temporal = df_accumulated["Tipo"].unique()
-        else:
-            tipos_disponibles_temporal = df_accumulated[
-                df_accumulated["Canal"] == selected_canal_temporal
-            ]["Tipo"].unique()
-        selected_tipo_temporal = st.selectbox(
-            "Tipo", ["Todas"] + list(tipos_disponibles_temporal), key="tipo_temporal"
-        )
-
-    # Filtrar las métricas disponibles según el canal y tipo seleccionados
-    if selected_canal_temporal == "Todas" and selected_tipo_temporal == "Todas":
-        metricas_disponibles_temporal = df_accumulated["Métrica"].unique()
-    elif selected_canal_temporal == "Todas":
-        metricas_disponibles_temporal = df_accumulated[
-            df_accumulated["Tipo"] == selected_tipo_temporal
-        ]["Métrica"].unique()
-    elif selected_tipo_temporal == "Todas":
-        metricas_disponibles_temporal = df_accumulated[
-            df_accumulated["Canal"] == selected_canal_temporal
-        ]["Métrica"].unique()
     else:
-        metricas_disponibles_temporal = df_accumulated[
-            (df_accumulated["Canal"] == selected_canal_temporal)
-            & (df_accumulated["Tipo"] == selected_tipo_temporal)
-        ]["Métrica"].unique()
+        # Si solo hay métricas en uno de los multiselects, mostrar gráfico y tabla
+        metricas_to_plot = selected_metricas_1 or selected_metricas_2
+        for metrica in metricas_to_plot:
+            df_metrica_filtrada = df_metrica_filtrada_temporal[
+                df_metrica_filtrada_temporal["Métrica"] == metrica
+            ]
 
-    # Tercera fila - Multiselect de Métricas (ahora filtradas por Canal y Tipo)
-    selected_metricas_temporal = st.multiselect(
-        "Métricas",
-        metricas_disponibles_temporal,
-        default=metricas_disponibles_temporal[:1],
-        key="metricas_temporal",
-    )
+            # Crear las columnas para el gráfico y la tabla antes de generar el contenido
+            col_graph, col_table = st.columns(2)
 
-    st.markdown("<br>", unsafe_allow_html=True)
+            # Crear gráfico de líneas para las empresas seleccionadas y por región
+            with col_graph:
+                fig = go.Figure()
 
-    # Filtrar el dataframe por los años, regiones seleccionadas y por las métricas
-    df_metrica_filtrada_temporal = df_accumulated[
-        (df_accumulated["Año"] >= start_year)
-        & (df_accumulated["Año"] <= end_year)
-        & (df_accumulated["Región"].isin(region_selected))  # Filtro por regiones
-        & (df_accumulated["Métrica"].isin(selected_metricas_temporal))
-    ]
+                for region in region_selected:
+                    df_region = df_metrica_filtrada[
+                        df_metrica_filtrada["Región"] == region
+                    ]
+                    for company in COMPANIES + ["AVG", "AVG_otros"]:
+                        if eval(f"{company}_selected"):
+                            df_company = (
+                                df_region.groupby("Año")[company].mean().reset_index()
+                            )
+                            fig.add_trace(
+                                go.Scatter(
+                                    x=df_company["Año"],
+                                    y=df_company[company],
+                                    mode="lines",
+                                    name=f"{company} - {region}",
+                                )
+                            )
 
-    # Calcular la variación porcentual
-    def calcular_variacion(df, col):
-        inicio = df[df["Año"] == start_year][col].mean()
-        fin = df[df["Año"] == end_year][col].mean()
-        variacion_relativa = (fin - inicio) / inicio
-        return f"{variacion_relativa:.2%}" if inicio != 0 else None
-
-    # Crear DataFrame con la variación porcentual para cada métrica, empresa y región
-    for metrica in selected_metricas_temporal:
-        df_metrica_filtrada = df_metrica_filtrada_temporal[
-            df_metrica_filtrada_temporal["Métrica"] == metrica
-        ]
-
-        variacion_data = {
-            "Empresa": [],
-            "Región": [],
-            "Variación %": [],
-        }
-
-        for region in region_selected:
-            df_region = df_metrica_filtrada[df_metrica_filtrada["Región"] == region]
-            if A_selected:
-                variacion_data["Empresa"].append("A")
-                variacion_data["Región"].append(region)
-                variacion_data["Variación %"].append(calcular_variacion(df_region, "A"))
-            if B_selected:
-                variacion_data["Empresa"].append("B")
-                variacion_data["Región"].append(region)
-                variacion_data["Variación %"].append(calcular_variacion(df_region, "B"))
-            if C_selected:
-                variacion_data["Empresa"].append("C")
-                variacion_data["Región"].append(region)
-                variacion_data["Variación %"].append(calcular_variacion(df_region, "C"))
-            if D_selected:
-                variacion_data["Empresa"].append("D")
-                variacion_data["Región"].append(region)
-                variacion_data["Variación %"].append(calcular_variacion(df_region, "D"))
-            if E_selected:
-                variacion_data["Empresa"].append("E")
-                variacion_data["Región"].append(region)
-                variacion_data["Variación %"].append(calcular_variacion(df_region, "E"))
-            if AVG_selected:
-                variacion_data["Empresa"].append("AVG")
-                variacion_data["Región"].append(region)
-                variacion_data["Variación %"].append(
-                    calcular_variacion(df_region, "AVG")
-                )
-            if AVG_otros_selected:
-                variacion_data["Empresa"].append("AVG_otros")
-                variacion_data["Región"].append(region)
-                variacion_data["Variación %"].append(
-                    calcular_variacion(df_region, "AVG_otros")
+                fig.update_layout(
+                    title=f"Evolución temporal de {metrica}",
+                    xaxis_title="Año",
+                    yaxis_title="Valor de la Métrica",
+                    template="plotly_white",
                 )
 
-        variacion_df = pd.DataFrame(variacion_data)
+                st.plotly_chart(fig, use_container_width=True)
 
-        st.markdown("<br>", unsafe_allow_html=True)
+            # Crear tabla de variación porcentual para cada métrica, empresa y región
+            with col_table:
+                variacion_data = {
+                    "Empresa": [],
+                    "Región": [],
+                    "Variación %": [],
+                }
 
-        col_graph, col_table = st.columns([2, 1])
+                for region in region_selected:
+                    df_region = df_metrica_filtrada[
+                        df_metrica_filtrada["Región"] == region
+                    ]
+                    for company in COMPANIES + ["AVG", "AVG_otros"]:
+                        if eval(f"{company}_selected"):
+                            inicio = df_region[df_region["Año"] == start_year][
+                                company
+                            ].mean()
+                            fin = df_region[df_region["Año"] == end_year][
+                                company
+                            ].mean()
+                            variacion_relativa = (
+                                (fin - inicio) / inicio if inicio != 0 else None
+                            )
+                            variacion_data["Empresa"].append(company)
+                            variacion_data["Región"].append(region)
+                            variacion_data["Variación %"].append(
+                                f"{variacion_relativa:.2%}"
+                                if variacion_relativa is not None
+                                else "N/A"
+                            )
 
-        with col_table:
-            st.markdown("<br>", unsafe_allow_html=True)
-            st.markdown(
-                f"###### Variación porcentual entre el año {start_year} y el año {end_year}"
-            )
-            st.markdown("<br>", unsafe_allow_html=True)
-            st.dataframe(variacion_df, use_container_width=True)
+                variacion_df = pd.DataFrame(variacion_data)
 
-        # Crear gráfico de líneas para las empresas seleccionadas y por región
-        fig = go.Figure()
+                st.markdown("<br>", unsafe_allow_html=True)
 
-        for region in region_selected:
-            df_region = df_metrica_filtrada[df_metrica_filtrada["Región"] == region]
-            if A_selected:
-                df_A = df_region.groupby("Año")["A"].mean().reset_index()
-                fig.add_trace(
-                    go.Scatter(
-                        x=df_A["Año"], y=df_A["A"], mode="lines", name=f"A - {region}"
-                    )
+                st.markdown(
+                    f"###### Variación porcentual entre el año {start_year} y el año {end_year}"
                 )
-
-            if B_selected:
-                df_B = df_region.groupby("Año")["B"].mean().reset_index()
-                fig.add_trace(
-                    go.Scatter(
-                        x=df_B["Año"], y=df_B["B"], mode="lines", name=f"B - {region}"
-                    )
-                )
-
-            if C_selected:
-                df_C = df_region.groupby("Año")["C"].mean().reset_index()
-                fig.add_trace(
-                    go.Scatter(
-                        x=df_C["Año"], y=df_C["C"], mode="lines", name=f"C - {region}"
-                    )
-                )
-
-            if D_selected:
-                df_D = df_region.groupby("Año")["D"].mean().reset_index()
-                fig.add_trace(
-                    go.Scatter(
-                        x=df_D["Año"], y=df_D["D"], mode="lines", name=f"D - {region}"
-                    )
-                )
-
-            if E_selected:
-                df_E = df_region.groupby("Año")["E"].mean().reset_index()
-                fig.add_trace(
-                    go.Scatter(
-                        x=df_E["Año"], y=df_E["E"], mode="lines", name=f"E - {region}"
-                    )
-                )
-
-            if AVG_selected:
-                df_AVG = df_region.groupby("Año")["AVG"].mean().reset_index()
-                fig.add_trace(
-                    go.Scatter(
-                        x=df_AVG["Año"],
-                        y=df_AVG["AVG"],
-                        mode="lines",
-                        name=f"AVG - {region}",
-                    )
-                )
-
-            if AVG_otros_selected:
-                df_AVG_otros = (
-                    df_region.groupby("Año")["AVG_otros"].mean().reset_index()
-                )
-                fig.add_trace(
-                    go.Scatter(
-                        x=df_AVG_otros["Año"],
-                        y=df_AVG_otros["AVG_otros"],
-                        mode="lines",
-                        name=f"AVG_otros - {region}",
-                    )
-                )
-
-        fig.update_layout(
-            title=f"Evolución temporal de {metrica}",
-            xaxis_title="Año",
-            yaxis_title="Valor de la Métrica",
-            template="plotly_white",
-        )
-
-        with col_graph:
-            st.plotly_chart(fig, use_container_width=True)
+                st.markdown("<br>", unsafe_allow_html=True)
+                st.dataframe(variacion_df, use_container_width=True)
