@@ -6,7 +6,7 @@ import sys
 import plotly.colors as pc
 
 # Configuración de la página para usar todo el ancho
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide", page_title="BSG Dashboard", page_icon="🟠")
 
 # Obtener la ruta del directorio actual donde se encuentra el script
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -29,13 +29,13 @@ df_accumulated = cargar_datos()
 
 # Definir colores consistentes para cada empresa
 base_colors = {
-    "A": "#1f77b4",
+    "A": "#9467bd",
     "B": "#ff7f0e",
-    "C": "#2ca02c",
+    "C": "#e377c2",
     "D": "#d62728",
-    "E": "#9467bd",
+    "E": "#1f77b4",
     "AVG": "#8c564b",
-    "AVG_otros": "#e377c2",
+    "AVG_otros": "#2ca02c",
 }
 
 # Definir tipos de línea para cada región
@@ -53,84 +53,124 @@ st.title("BSG Dashboard: Inteligencia Competitiva")
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-st.markdown("###### Regiones, Empresas y Rango de años a analizar")
+# Crear barra lateral
+with st.sidebar:
 
-col1, col2 = st.columns(2)
-
-with col1:
-    # Checkboxes para las Regiones
-    regiones = df_accumulated["Región"].unique()
-    region_selected = []
-    cols = st.columns(len(regiones))
-
-    for i, region in enumerate(regiones):
-        # Asignar una clave única específica
-        if cols[i].checkbox(region, value=True, key=f"region_temporal_{region}"):
-            region_selected.append(region)
-
-    # Checkbox para seleccionar empresas y agregados
-    with st.container():
-        cols = st.columns([1, 1, 1, 1, 1, 3, 2])
-        A_selected = cols[0].checkbox("A", value=False)
-        B_selected = cols[1].checkbox("B", value=False)
-        C_selected = cols[2].checkbox("C", value=False)
-        D_selected = cols[3].checkbox("D", value=True)  # Por defecto seleccionado
-        E_selected = cols[4].checkbox("E", value=False)
-        AVG_otros_selected = cols[5].checkbox(
-            "AVG_otros", value=True
-        )  # Por defecto seleccionado
-        AVG_selected = cols[6].checkbox("AVG", value=False)
-
-with col2:
     # Slider para seleccionar el rango de años (Inicio y Fin)
+    if "start_year" not in st.session_state or "end_year" not in st.session_state:
+        st.session_state.start_year = int(df_accumulated["Año"].min())
+        st.session_state.end_year = int(df_accumulated["Año"].max())
+
     if df_accumulated["Año"].max() > df_accumulated["Año"].min():
         start_year, end_year = st.slider(
-            "Seleccionar el rango de años a analizar",
+            "Seleccione un año para gráficos de barras, o un rango de años para gráficos de líneas",
             min_value=int(df_accumulated["Año"].min()),
             max_value=int(df_accumulated["Año"].max()),
             value=(
-                int(df_accumulated["Año"].min()),
-                int(df_accumulated["Año"].max()),
+                st.session_state.start_year,
+                st.session_state.end_year,
             ),
             step=1,
             key="slider_temporal",
         )
-    else:
-        start_year = df_accumulated["Año"].min()
-        end_year = df_accumulated["Año"].max()
+        st.session_state.start_year = start_year
+        st.session_state.end_year = end_year
 
-st.markdown("<br>", unsafe_allow_html=True)
+    # Checkboxes para las Regiones
+    st.markdown("###### Filtrar Regiones")
+    regiones = df_accumulated["Región"].unique()
+    if "region_selected" not in st.session_state:
+        st.session_state.region_selected = regiones.tolist()
 
-# Segunda fila - Checkboxes de Canal y Tipo
-col1, col2 = st.columns([3, 6])  # Ajustando la proporción para canales y tipos
+    for region in regiones:
+        if st.checkbox(
+            region,
+            value=region in st.session_state.region_selected,
+            key=f"region_temporal_{region}",
+        ):
+            if region not in st.session_state.region_selected:
+                st.session_state.region_selected.append(region)
+        else:
+            if region in st.session_state.region_selected:
+                st.session_state.region_selected.remove(region)
 
-with col1:
-    st.markdown("###### Selección de Canales")
+    # Checkbox para seleccionar empresas y agregados
+    st.markdown("###### Filtrar Empresas")
+    st.session_state.A_selected = st.checkbox(
+        "A", value=st.session_state.get("A_selected", False)
+    )
+    st.session_state.B_selected = st.checkbox(
+        "B", value=st.session_state.get("B_selected", False)
+    )
+    st.session_state.C_selected = st.checkbox(
+        "C", value=st.session_state.get("C_selected", False)
+    )
+    st.session_state.D_selected = st.checkbox(
+        "D", value=st.session_state.get("D_selected", True)
+    )  # Por defecto seleccionado
+    st.session_state.E_selected = st.checkbox(
+        "E", value=st.session_state.get("E_selected", False)
+    )
+    st.session_state.AVG_otros_selected = st.checkbox(
+        "AVG_otros", value=st.session_state.get("AVG_otros_selected", True)
+    )  # Por defecto seleccionado
+    st.session_state.AVG_selected = st.checkbox(
+        "AVG", value=st.session_state.get("AVG_selected", False)
+    )
+
+    # Checkboxes de Canal y Tipo
+    st.markdown("###### Filtrar Métricas disponibles por Canal")
     canales_disponibles = df_accumulated["Canal"].unique()
-    canal_selected = []
-    cols_canal = st.columns(len(canales_disponibles))
+    if "canal_selected" not in st.session_state:
+        st.session_state.canal_selected = canales_disponibles.tolist()
 
-    for i, canal in enumerate(canales_disponibles):
-        # Checkboxes para los canales
-        if cols_canal[i].checkbox(canal, value=True, key=f"canal_temporal_{canal}"):
-            canal_selected.append(canal)
+    for canal in canales_disponibles:
+        if st.checkbox(
+            canal,
+            value=canal in st.session_state.canal_selected,
+            key=f"canal_temporal_{canal}",
+        ):
+            if canal not in st.session_state.canal_selected:
+                st.session_state.canal_selected.append(canal)
+        else:
+            if canal in st.session_state.canal_selected:
+                st.session_state.canal_selected.remove(canal)
 
-with col2:
-    st.markdown("###### Selección de Tipos")
+    st.markdown("###### Filtrar Métricas disponibles por Tipo")
     tipos_disponibles = df_accumulated["Tipo"].unique()
-    tipo_selected = []
-    cols_tipo = st.columns(len(tipos_disponibles))
+    if "tipo_selected" not in st.session_state:
+        st.session_state.tipo_selected = tipos_disponibles.tolist()
 
-    for i, tipo in enumerate(tipos_disponibles):
-        # Checkboxes para los tipos
-        if cols_tipo[i].checkbox(tipo, value=True, key=f"tipo_temporal_{tipo}"):
-            tipo_selected.append(tipo)
+    for tipo in tipos_disponibles:
+        if st.checkbox(
+            tipo,
+            value=tipo in st.session_state.tipo_selected,
+            key=f"tipo_temporal_{tipo}",
+        ):
+            if tipo not in st.session_state.tipo_selected:
+                st.session_state.tipo_selected.append(tipo)
+        else:
+            if tipo in st.session_state.tipo_selected:
+                st.session_state.tipo_selected.remove(tipo)
 
 # Filtrar las métricas disponibles según el canal y tipo seleccionados
 metricas_disponibles_temporal = df_accumulated[
-    (df_accumulated["Canal"].isin(canal_selected))
-    & (df_accumulated["Tipo"].isin(tipo_selected))
+    (df_accumulated["Canal"].isin(st.session_state.canal_selected))
+    & (df_accumulated["Tipo"].isin(st.session_state.tipo_selected))
 ]["Métrica"].unique()
+
+# Agregar estilos CSS para los multiselect
+st.markdown(
+    """
+    <style>
+        div[data-baseweb="select"] {
+            border: 2px solid #A50034 !important; /* Borde de color rojo similar al tema UBP */
+            border-radius: 4px; /* Bordes redondeados */
+        }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
 # Tercera fila - Multiselects de Métricas (ahora filtradas por Canal y Tipo)
 col1, col2 = st.columns(2)
@@ -158,13 +198,15 @@ st.markdown("<br>", unsafe_allow_html=True)
 
 # Filtrar el dataframe por los años, regiones seleccionadas y por las métricas
 df_metrica_filtrada_temporal = df_accumulated[
-    (df_accumulated["Año"] >= start_year)
-    & (df_accumulated["Año"] <= end_year)
-    & (df_accumulated["Región"].isin(region_selected))  # Filtro por regiones
+    (df_accumulated["Año"] >= st.session_state.start_year)
+    & (df_accumulated["Año"] <= st.session_state.end_year)
+    & (
+        df_accumulated["Región"].isin(st.session_state.region_selected)
+    )  # Filtro por regiones
 ]
 
 # Verificar si es un análisis transversal o temporal
-is_transversal = start_year == end_year
+is_transversal = st.session_state.start_year == st.session_state.end_year
 
 if is_transversal:
     # Análisis Transversal (Gráfico de Barras)
@@ -181,10 +223,10 @@ if is_transversal:
                     df_metrica_1 = df_metrica_filtrada_temporal[
                         df_metrica_filtrada_temporal["Métrica"] == metrica_1
                     ]
-                    for region in region_selected:
+                    for region in st.session_state.region_selected:
                         df_region = df_metrica_1[df_metrica_1["Región"] == region]
                         for company in COMPANIES + ["AVG", "AVG_otros"]:
-                            if eval(f"{company}_selected"):
+                            if st.session_state.get(f"{company}_selected"):
                                 fig_1.add_trace(
                                     go.Bar(
                                         x=[region],
@@ -209,10 +251,10 @@ if is_transversal:
                     df_metrica_2 = df_metrica_filtrada_temporal[
                         df_metrica_filtrada_temporal["Métrica"] == metrica_2
                     ]
-                    for region in region_selected:
+                    for region in st.session_state.region_selected:
                         df_region = df_metrica_2[df_metrica_2["Región"] == region]
                         for company in COMPANIES + ["AVG", "AVG_otros"]:
-                            if eval(f"{company}_selected"):
+                            if st.session_state.get(f"{company}_selected"):
                                 fig_2.add_trace(
                                     go.Bar(
                                         x=[region],
@@ -244,10 +286,10 @@ if is_transversal:
 
             with col_graph:
                 fig = go.Figure()
-                for region in region_selected:
+                for region in st.session_state.region_selected:
                     df_region = df_metrica[df_metrica["Región"] == region]
                     for company in COMPANIES + ["AVG", "AVG_otros"]:
-                        if eval(f"{company}_selected"):
+                        if st.session_state.get(f"{company}_selected"):
                             fig.add_trace(
                                 go.Bar(
                                     x=[region],
@@ -297,10 +339,10 @@ else:
                     df_metrica_1 = df_metrica_filtrada_temporal[
                         df_metrica_filtrada_temporal["Métrica"] == metrica_1
                     ]
-                    for region in region_selected:
+                    for region in st.session_state.region_selected:
                         df_region = df_metrica_1[df_metrica_1["Región"] == region]
                         for company in COMPANIES + ["AVG", "AVG_otros"]:
-                            if eval(f"{company}_selected"):
+                            if st.session_state.get(f"{company}_selected"):
                                 df_company = (
                                     df_region.groupby("Año")[company]
                                     .mean()
@@ -333,10 +375,10 @@ else:
                     df_metrica_2 = df_metrica_filtrada_temporal[
                         df_metrica_filtrada_temporal["Métrica"] == metrica_2
                     ]
-                    for region in region_selected:
+                    for region in st.session_state.region_selected:
                         df_region = df_metrica_2[df_metrica_2["Región"] == region]
                         for company in COMPANIES + ["AVG", "AVG_otros"]:
-                            if eval(f"{company}_selected"):
+                            if st.session_state.get(f"{company}_selected"):
                                 df_company = (
                                     df_region.groupby("Año")[company]
                                     .mean()
@@ -377,12 +419,13 @@ else:
             with col_graph:
                 fig = go.Figure()
 
-                for region in region_selected:
+                for region in st.session_state.region_selected:
                     df_region = df_metrica_filtrada[
                         df_metrica_filtrada["Región"] == region
                     ]
                     for company in COMPANIES + ["AVG", "AVG_otros"]:
-                        if eval(f"{company}_selected"):
+
+                        if st.session_state.get(f"{company}_selected", True):
                             df_company = (
                                 df_region.groupby("Año")[company].mean().reset_index()
                             )
@@ -416,12 +459,12 @@ else:
                     "Variación %": [],
                 }
 
-                for region in region_selected:
+                for region in st.session_state.region_selected:
                     df_region = df_metrica_filtrada[
                         df_metrica_filtrada["Región"] == region
                     ]
                     for company in COMPANIES + ["AVG", "AVG_otros"]:
-                        if eval(f"{company}_selected"):
+                        if st.session_state.get(f"{company}_selected", True):
                             inicio = df_region[df_region["Año"] == start_year][
                                 company
                             ].mean()
