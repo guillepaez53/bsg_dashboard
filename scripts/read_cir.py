@@ -12,7 +12,7 @@ sys.path.append(project_root)
 
 from config.constants import (
     DATA_RAW_CI_DIR,
-    DATA_PROCESSED_DIR,
+    DATA_PROCESSED_CI_DIR,
     REGIONES,
     COMPANIES,
     NO_COMPANIES,
@@ -237,12 +237,10 @@ for k in regiones.keys():
     regiones[k].loc[:, "Región"] = REGIONES[k]
 
     # Reordenamiento de columnas
-    first_column = regiones[k].pop("Tipo")
-    regiones[k].insert(0, "Tipo", first_column)
-    first_column = regiones[k].pop("Canal")
-    regiones[k].insert(0, "Canal", first_column)
-    first_column = regiones[k].pop("Región")
-    regiones[k].insert(0, "Región", first_column)
+    nueva_orden = ["Región", "Canal", "Tipo"] + [
+        col for col in regiones[k].columns if col not in ["Región", "Canal", "Tipo"]
+    ]
+    regiones[k] = regiones[k][nueva_orden]
 
     # Cálculos de promedios y diferencias
     regiones[k]["AVG"] = regiones[k][["A", "B", "C", "D", "E"]].mean(axis=1)
@@ -261,10 +259,13 @@ df = pd.concat([regiones["NA"], regiones["EA"], regiones["AP"], regiones["LA"]])
 # Reseteo de índice
 df.reset_index(drop=True, inplace=True)
 
-df.loc[:, "Año"] = year
+# Mover Año a primera columna
+df.loc[:, "Año"] = year + 2000
 first_column = df.pop("Año")
 df.insert(0, "Año", first_column)
 
 # Exportación
-df.to_csv(os.path.join(DATA_PROCESSED_DIR, "ci_" + str(year) + ".csv"), index=False)
-df.to_excel(os.path.join(DATA_PROCESSED_DIR, "ci_" + str(year) + ".xlsx"), index=False)
+df.to_csv(os.path.join(DATA_PROCESSED_CI_DIR, "ci_" + str(year) + ".csv"), index=False)
+df.to_excel(
+    os.path.join(DATA_PROCESSED_CI_DIR, "ci_" + str(year) + ".xlsx"), index=False
+)

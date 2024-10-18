@@ -4,17 +4,39 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Directorio del proyecto
+# Directorio del proyecto (calculado de manera relativa desde el Directorio base)
 
 PROJECT_DIR = os.path.join(BASE_DIR, "..")
 
-# Directorio de datos
+# Directorio raíz de los datos
 
 DATA_DIR = os.path.join(PROJECT_DIR, "data")
+
+# Directorios de los datos crudos
+
 DATA_RAW_DIR = os.path.join(DATA_DIR, "raw")
 DATA_RAW_CI_DIR = os.path.join(DATA_RAW_DIR, "competitive_intelligence")
+DATA_RAW_FI_DIR = os.path.join(DATA_RAW_DIR, "footwear_industry")
+DATA_RAW_CO_DIR = os.path.join(DATA_RAW_DIR, "company_operative")
+
+# Directorio de los datos parseados
+DATA_PARSED_DIR = os.path.join(DATA_DIR, "parsed")
+DATA_PARSED_FI_DIR = os.path.join(DATA_PARSED_DIR, "footwear_industry")
+DATA_PARSED_CO_DIR = os.path.join(DATA_PARSED_DIR, "company_operative")
+
+# Directorio de los datos procesados
+
 DATA_PROCESSED_DIR = os.path.join(DATA_DIR, "processed")
+DATA_PROCESSED_CI_DIR = os.path.join(DATA_PROCESSED_DIR, "competitive_intelligence")
+DATA_PROCESSED_FI_DIR = os.path.join(DATA_PROCESSED_DIR, "footwear_industry")
+DATA_PROCESSED_CO_DIR = os.path.join(DATA_PROCESSED_DIR, "company_operative")
+
+# Directorio de los datos acuumulados
+
 DATA_ACCUMULATED_DIR = os.path.join(DATA_DIR, "accumulated")
+DATA_ACCUMULATED_CI_DIR = os.path.join(DATA_ACCUMULATED_DIR, "competitive_intelligence")
+DATA_ACCUMULATED_FI_DIR = os.path.join(DATA_ACCUMULATED_DIR, "footwear_industry")
+DATA_ACCUMULATED_CO_DIR = os.path.join(DATA_ACCUMULATED_DIR, "company_operative")
 
 # Definición de constantes
 
