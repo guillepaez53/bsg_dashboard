@@ -13,12 +13,12 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, ".."))
 sys.path.append(project_root)
 
-from config.constants import DATA_ACCUMULATED_DIR, COMPANY, COMPANIES
+from config.constants import DATA_ACCUMULATED_CI_DIR, COMPANY, COMPANIES
 
 
 # Cargar los datos
 def cargar_datos():
-    df = pd.read_csv(os.path.join(DATA_ACCUMULATED_DIR, "ci_acumulado.csv"))
+    df = pd.read_csv(os.path.join(DATA_ACCUMULATED_CI_DIR, "ci_acumulado.csv"))
     df["AVG"] = pd.to_numeric(df["AVG"], errors="coerce").fillna(0)
     df["AVG_otros"] = pd.to_numeric(df["AVG_otros"], errors="coerce").fillna(0)
     # df["diferencia_porcentaje"] = df["diferencia_porcentaje"] * 100
