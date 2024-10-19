@@ -1,0 +1,137 @@
+Año,Región,Canal,Tipo,Métrica,A,B,C,D,E,AVG,AVG_otros,diferencia,diferencia_porcentaje
+2017,North America,1 - Mayorista,a - Ingreso,1 - a - Wholesale Income ($000s),117975.0,131928.0,114678.0,296964.0,201456.0,172600.2,141509.25,155454.75,1.0985483281128265
+2017,North America,1 - Mayorista,b - Precio,1 - b - Rebate Offer ($ per pair),5.0,4.0,3.0,3.0,5.0,4.0,4.25,-1.25,-0.29411764705882354
+2017,North America,1 - Mayorista,b - Precio,1 - b - Wholesale Net Price ($ per pair),71.5,69.0,69.0,73.0,72.0,70.9,70.375,2.625,0.037300177619893425
+2017,North America,1 - Mayorista,b - Precio,1 - b - Wholesale Price ($ per pair),76.5,73.0,72.0,76.0,77.0,74.9,74.625,1.375,0.018425460636515914
+2017,North America,1 - Mayorista,c - Volumen,1 - c -   Gained / Lost (due to stockouts),-38.0,7.0,6.0,15.0,10.0,0.0,-3.75,18.75,-5.0
+2017,North America,1 - Mayorista,c - Volumen,1 - c - Pairs Demanded (000s),1688.0,1905.0,1656.0,4053.0,2788.0,2418.0,2009.25,2043.75,1.017170586039567
+2017,North America,1 - Mayorista,c - Volumen,1 - c - Pairs Sold (000s),1650.0,1912.0,1662.0,4068.0,2798.0,2418.0,2005.5,2062.5,1.0284218399401646
+2017,North America,1 - Mayorista,d - Cuota,1 - d - Market Share (%),0.1365,0.1581,0.1375,0.3365,0.2314,0.2,0.165875,0.17062500000000003,1.0286360211002263
+2017,North America,1 - Mayorista,e - Calidad,1 - e - Model Availability,349.8,478.3,399.2,491.3,345.5,412.82,393.2,98.10000000000002,0.24949135300101735
+2017,North America,1 - Mayorista,e - Calidad,1 - e - S/Q Rating (1 to 10 stars),6.2,5.4,6.7,7.5,7.4,6.640000000000001,6.425000000000001,1.0749999999999993,0.16731517509727614
+2017,North America,1 - Mayorista,f - Marketing,1 - f - Delivery Time (weeks),2.0,2.0,2.0,2.0,2.0,2.0,2.0,0.0,0.0
+2017,North America,1 - Mayorista,f - Marketing,1 - f - Retail Outlets,2762.0,3076.0,3858.0,5608.0,5083.0,4077.4,3694.75,1913.25,0.5178293524595711
+2017,North America,1 - Mayorista,f - Marketing,1 - f - Retailer Support ($ per outlet),8500.0,8250.0,8000.0,9000.0,8250.0,8400.0,8250.0,750.0,0.09090909090909091
+2017,North America,1 - Mayorista,g - Imagen,1 - g - Brand Advertising ($000s),16000.0,12000.0,12000.0,16000.0,15000.0,14200.0,13750.0,2250.0,0.16363636363636364
+2017,North America,1 - Mayorista,g - Imagen,1 - g - Brand Reputation (prior-year image),72.0,65.0,84.0,100.0,93.0,82.8,78.5,21.5,0.27388535031847133
+2017,North America,1 - Mayorista,g - Imagen,1 - g - Celebrity Appeal,145.0,75.0,0.0,170.0,100.0,98.0,80.0,90.0,1.125
+2017,North America,2 - Internet,a - Ingreso,2 - a - Retail Income ($000s),71172.0,71925.0,61152.0,107520.0,74011.0,77156.0,69565.0,37955.0,0.5456048300150937
+2017,North America,2 - Internet,b - Precio,2 - b - Retail Price ($ per pair),108.0,105.0,104.0,112.0,109.0,107.6,106.5,5.5,0.051643192488262914
+2017,North America,2 - Internet,c - Volumen,2 - c - Online Orders (000s),659.0,685.0,588.0,960.0,679.0,714.2,652.75,307.25,0.47070088088854845
+2017,North America,2 - Internet,c - Volumen,2 - c - Pairs Sold (000s),659.0,685.0,588.0,960.0,679.0,714.2,652.75,307.25,0.47070088088854845
+2017,North America,2 - Internet,d - Cuota,2 - d - Market Share (%),0.1845,0.1918,0.1647,0.2688,0.1901,0.19997999999999996,0.18277499999999997,0.08602500000000002,0.4706606483381208
+2017,North America,2 - Internet,e - Calidad,2 - e - Model Availability,349.8,478.3,399.2,491.3,345.5,412.82,393.2,98.10000000000002,0.24949135300101735
+2017,North America,2 - Internet,e - Calidad,2 - e - S/Q Rating (1 to 10 stars),6.2,5.4,6.7,7.5,7.4,6.640000000000001,6.425000000000001,1.0749999999999993,0.16731517509727614
+2017,North America,2 - Internet,f - Marketing,2 - f - Free Shipping,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0
+2017,North America,2 - Internet,g - Imagen,2 - g - Brand Advertising ($000s),16000.0,12000.0,12000.0,16000.0,15000.0,14200.0,13750.0,2250.0,0.16363636363636364
+2017,North America,2 - Internet,g - Imagen,2 - g - Brand Reputation (prior-year image),72.0,65.0,84.0,100.0,93.0,82.8,78.5,21.5,0.27388535031847133
+2017,North America,2 - Internet,g - Imagen,2 - g - Celebrity Appeal,145.0,75.0,0.0,170.0,100.0,98.0,80.0,90.0,1.125
+2017,North America,2 - Internet,g - Imagen,2 - g - Search Engine Advert. ($000s),13500.0,12000.0,13250.0,13000.0,13250.0,13000.0,13000.0,0.0,0.0
+2017,North America,3 - Privada,a - Ingreso,3 - a - Offer Income ($000s),5443.599999999999,17901.0,31734.0,0.0,24563.0,15928.320000000002,19910.4,-19910.4,-1.0
+2017,North America,3 - Privada,b - Precio,3 - b - Offer Price (max = $40.00),43.9,39.0,41.0,0.0,38.5,32.480000000000004,40.6,-40.6,-1.0
+2017,North America,3 - Privada,c - Volumen,3 - c - Pairs Offered (000s),700.0,459.0,774.0,0.0,638.0,514.2,642.75,-642.75,-1.0
+2017,North America,3 - Privada,c - Volumen,3 - c - Pairs Sold (000s),124.0,459.0,774.0,0.0,638.0,399.0,498.75,-498.75,-1.0
+2017,North America,3 - Privada,d - Cuota,3 - d - Market Share (%),0.062,0.23,0.388,0.0,0.32,0.2,0.25,-0.25,-1.0
+2017,North America,3 - Privada,e - Calidad,3 - e - S/Q Rating (min = 3.0 stars),5.0,5.0,5.2,0.0,5.1,4.06,5.074999999999999,-5.074999999999999,-1.0
+2017,Europe-Africa,1 - Mayorista,a - Ingreso,1 - a - Wholesale Income ($000s),84280.0,114885.0,170844.0,189189.0,209346.0,153708.8,144838.75,44350.25,0.3062043134175074
+2017,Europe-Africa,1 - Mayorista,b - Precio,1 - b - Rebate Offer ($ per pair),5.0,6.0,3.0,0.0,5.0,3.8,4.75,-4.75,-1.0
+2017,Europe-Africa,1 - Mayorista,b - Precio,1 - b - Wholesale Net Price ($ per pair),70.0,69.0,69.0,77.0,74.0,71.8,70.5,6.5,0.09219858156028368
+2017,Europe-Africa,1 - Mayorista,b - Precio,1 - b - Wholesale Price ($ per pair),75.0,75.0,72.0,77.0,79.0,75.6,75.25,1.75,0.023255813953488372
+2017,Europe-Africa,1 - Mayorista,c - Volumen,1 - c -   Gained / Lost (due to stockouts),-227.0,191.0,284.0,-198.0,-50.0,0.0,49.5,-247.5,-5.0
+2017,Europe-Africa,1 - Mayorista,c - Volumen,1 - c - Pairs Demanded (000s),1431.0,1474.0,2192.0,2655.0,2879.0,2126.2,1994.0,661.0,0.33149448345035104
+2017,Europe-Africa,1 - Mayorista,c - Volumen,1 - c - Pairs Sold (000s),1204.0,1665.0,2476.0,2457.0,2829.0,2126.2,2043.5,413.5,0.20234891118179593
+2017,Europe-Africa,1 - Mayorista,d - Cuota,1 - d - Market Share (%),0.1133,0.1566,0.2329,0.2311,0.2661,0.19999999999999998,0.19222499999999998,0.03887500000000002,0.20223696189361437
+2017,Europe-Africa,1 - Mayorista,e - Calidad,1 - e - Model Availability,349.6,398.4,399.6,486.2,390.0,404.76,384.4,101.80000000000001,0.26482830385015615
+2017,Europe-Africa,1 - Mayorista,e - Calidad,1 - e - S/Q Rating (1 to 10 stars),6.6,4.9,6.7,7.5,7.7,6.68,6.475,1.0250000000000004,0.15830115830115837
+2017,Europe-Africa,1 - Mayorista,f - Marketing,1 - f - Delivery Time (weeks),2.0,2.0,2.0,2.0,2.0,2.0,2.0,0.0,0.0
+2017,Europe-Africa,1 - Mayorista,f - Marketing,1 - f - Retail Outlets,2071.0,1711.0,4704.0,4689.0,5470.0,3729.0,3489.0,1200.0,0.34393809114359414
+2017,Europe-Africa,1 - Mayorista,f - Marketing,1 - f - Retailer Support ($ per outlet),6000.0,6250.0,8000.0,6000.0,8500.0,6950.0,7187.5,-1187.5,-0.16521739130434782
+2017,Europe-Africa,1 - Mayorista,g - Imagen,1 - g - Brand Advertising ($000s),16000.0,16000.0,12000.0,10000.0,16500.0,14100.0,15125.0,-5125.0,-0.33884297520661155
+2017,Europe-Africa,1 - Mayorista,g - Imagen,1 - g - Brand Reputation (prior-year image),72.0,65.0,84.0,100.0,93.0,82.8,78.5,21.5,0.27388535031847133
+2017,Europe-Africa,1 - Mayorista,g - Imagen,1 - g - Celebrity Appeal,110.0,80.0,0.0,170.0,135.0,99.0,81.25,88.75,1.0923076923076922
+2017,Europe-Africa,2 - Internet,a - Ingreso,2 - a - Retail Income ($000s),61270.0,52704.0,57200.0,86912.0,79665.0,67550.2,62709.75,24202.25,0.3859407827331476
+2017,Europe-Africa,2 - Internet,b - Precio,2 - b - Retail Price ($ per pair),110.0,108.0,104.0,112.0,113.0,109.4,108.75,3.25,0.029885057471264367
+2017,Europe-Africa,2 - Internet,c - Volumen,2 - c - Online Orders (000s),557.0,488.0,550.0,776.0,705.0,615.2,575.0,201.0,0.34956521739130436
+2017,Europe-Africa,2 - Internet,c - Volumen,2 - c - Pairs Sold (000s),557.0,488.0,550.0,776.0,705.0,615.2,575.0,201.0,0.34956521739130436
+2017,Europe-Africa,2 - Internet,d - Cuota,2 - d - Market Share (%),0.1811,0.1586,0.1788,0.2523,0.2292,0.19999999999999998,0.18692499999999998,0.06537500000000004,0.34973920021398985
+2017,Europe-Africa,2 - Internet,e - Calidad,2 - e - Model Availability,349.6,398.4,399.6,486.2,390.0,404.76,384.4,101.80000000000001,0.26482830385015615
+2017,Europe-Africa,2 - Internet,e - Calidad,2 - e - S/Q Rating (1 to 10 stars),6.6,4.9,6.7,7.5,7.7,6.68,6.475,1.0250000000000004,0.15830115830115837
+2017,Europe-Africa,2 - Internet,f - Marketing,2 - f - Free Shipping,1.0,0.0,1.0,1.0,1.0,0.8,0.75,0.25,0.3333333333333333
+2017,Europe-Africa,2 - Internet,g - Imagen,2 - g - Brand Advertising ($000s),16000.0,16000.0,12000.0,10000.0,16500.0,14100.0,15125.0,-5125.0,-0.33884297520661155
+2017,Europe-Africa,2 - Internet,g - Imagen,2 - g - Brand Reputation (prior-year image),72.0,65.0,84.0,100.0,93.0,82.8,78.5,21.5,0.27388535031847133
+2017,Europe-Africa,2 - Internet,g - Imagen,2 - g - Celebrity Appeal,110.0,80.0,0.0,170.0,135.0,99.0,81.25,88.75,1.0923076923076922
+2017,Europe-Africa,2 - Internet,g - Imagen,2 - g - Search Engine Advert. ($000s),13000.0,15000.0,13000.0,13000.0,13500.0,13500.0,13625.0,-625.0,-0.045871559633027525
+2017,Europe-Africa,3 - Privada,a - Ingreso,3 - a - Offer Income ($000s),28886.2,18642.0,31980.0,0.0,0.0,15901.64,19877.05,-19877.05,-1.0
+2017,Europe-Africa,3 - Privada,b - Precio,3 - b - Offer Price (max = $40.00),43.9,39.0,41.0,0.0,0.0,24.78,30.975,-30.975,-1.0
+2017,Europe-Africa,3 - Privada,c - Volumen,3 - c - Pairs Offered (000s),658.0,478.0,780.0,0.0,0.0,383.2,479.0,-479.0,-1.0
+2017,Europe-Africa,3 - Privada,c - Volumen,3 - c - Pairs Sold (000s),658.0,478.0,780.0,0.0,0.0,383.2,479.0,-479.0,-1.0
+2017,Europe-Africa,3 - Privada,d - Cuota,3 - d - Market Share (%),0.33,0.24,0.391,0.0,0.0,0.1922,0.24025000000000002,-0.24025000000000002,-1.0
+2017,Europe-Africa,3 - Privada,e - Calidad,3 - e - S/Q Rating (min = 3.0 stars),5.0,5.0,5.2,0.0,0.0,3.04,3.8,-3.8,-1.0
+2017,Asia-Pacifc,1 - Mayorista,a - Ingreso,1 - a - Wholesale Income ($000s),93907.50000000001,83720.0,85224.0,226248.0,193161.0,136452.1,114003.125,112244.875,0.9845771771607138
+2017,Asia-Pacifc,1 - Mayorista,b - Precio,1 - b - Rebate Offer ($ per pair),5.0,4.0,4.0,4.0,5.0,4.4,4.5,-0.5,-0.1111111111111111
+2017,Asia-Pacifc,1 - Mayorista,b - Precio,1 - b - Wholesale Net Price ($ per pair),65.9,65.0,67.0,66.0,67.0,66.17999999999999,66.225,-0.22499999999999432,-0.003397508493771149
+2017,Asia-Pacifc,1 - Mayorista,b - Precio,1 - b - Wholesale Price ($ per pair),70.9,69.0,71.0,70.0,72.0,70.58,70.725,-0.7249999999999943,-0.010250972074938062
+2017,Asia-Pacifc,1 - Mayorista,c - Volumen,1 - c -   Gained / Lost (due to stockouts),-135.0,36.0,36.0,-19.0,82.0,0.0,4.75,-23.75,-5.0
+2017,Asia-Pacifc,1 - Mayorista,c - Volumen,1 - c - Pairs Demanded (000s),1560.0,1252.0,1236.0,3447.0,2801.0,2059.2,1712.25,1734.75,1.0131406044678055
+2017,Asia-Pacifc,1 - Mayorista,c - Volumen,1 - c - Pairs Sold (000s),1425.0,1288.0,1272.0,3428.0,2883.0,2059.2,1717.0,1711.0,0.9965055329062318
+2017,Asia-Pacifc,1 - Mayorista,d - Cuota,1 - d - Market Share (%),0.1384,0.1251,0.1235,0.3329,0.28,0.19998,0.16675,0.16614999999999996,0.9964017991004495
+2017,Asia-Pacifc,1 - Mayorista,e - Calidad,1 - e - Model Availability,350.0,474.4,399.7,490.7,392.7,421.5,404.2,86.5,0.2140029688273132
+2017,Asia-Pacifc,1 - Mayorista,e - Calidad,1 - e - S/Q Rating (1 to 10 stars),6.3,4.9,6.7,7.5,7.7,6.62,6.3999999999999995,1.1000000000000005,0.1718750000000001
+2017,Asia-Pacifc,1 - Mayorista,f - Marketing,1 - f - Delivery Time (weeks),2.0,2.0,2.0,2.0,2.0,2.0,2.0,0.0,0.0
+2017,Asia-Pacifc,1 - Mayorista,f - Marketing,1 - f - Retail Outlets,2685.0,1576.0,3372.0,5073.0,5080.0,3557.2,3178.25,1894.75,0.5961614095807442
+2017,Asia-Pacifc,1 - Mayorista,f - Marketing,1 - f - Retailer Support ($ per outlet),7000.0,6000.0,7500.0,7500.0,8000.0,7200.0,7125.0,375.0,0.05263157894736842
+2017,Asia-Pacifc,1 - Mayorista,g - Imagen,1 - g - Brand Advertising ($000s),15500.0,5000.0,10000.0,16000.0,16000.0,12500.0,11625.0,4375.0,0.3763440860215054
+2017,Asia-Pacifc,1 - Mayorista,g - Imagen,1 - g - Brand Reputation (prior-year image),72.0,65.0,84.0,100.0,93.0,82.8,78.5,21.5,0.27388535031847133
+2017,Asia-Pacifc,1 - Mayorista,g - Imagen,1 - g - Celebrity Appeal,160.0,95.0,0.0,135.0,120.0,102.0,93.75,41.25,0.44
+2017,Asia-Pacifc,2 - Internet,a - Ingreso,2 - a - Retail Income ($000s),62521.0,52624.0,39690.0,86991.0,69764.0,62318.0,56149.75,30841.25,0.5492678061790124
+2017,Asia-Pacifc,2 - Internet,b - Precio,2 - b - Retail Price ($ per pair),103.0,104.0,105.0,107.0,107.0,105.2,104.75,2.25,0.021479713603818614
+2017,Asia-Pacifc,2 - Internet,c - Volumen,2 - c - Online Orders (000s),607.0,506.0,378.0,813.0,652.0,591.2,535.75,277.25,0.5174988334111059
+2017,Asia-Pacifc,2 - Internet,c - Volumen,2 - c - Pairs Sold (000s),607.0,506.0,378.0,813.0,652.0,591.2,535.75,277.25,0.5174988334111059
+2017,Asia-Pacifc,2 - Internet,d - Cuota,2 - d - Market Share (%),0.2053,0.1712,0.1279,0.275,0.2206,0.2,0.18125,0.09375000000000003,0.517241379310345
+2017,Asia-Pacifc,2 - Internet,e - Calidad,2 - e - Model Availability,350.0,474.4,399.7,490.7,392.7,421.5,404.2,86.5,0.2140029688273132
+2017,Asia-Pacifc,2 - Internet,e - Calidad,2 - e - S/Q Rating (1 to 10 stars),6.3,4.9,6.7,7.5,7.7,6.62,6.3999999999999995,1.1000000000000005,0.1718750000000001
+2017,Asia-Pacifc,2 - Internet,f - Marketing,2 - f - Free Shipping,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0
+2017,Asia-Pacifc,2 - Internet,g - Imagen,2 - g - Brand Advertising ($000s),15500.0,5000.0,10000.0,16000.0,16000.0,12500.0,11625.0,4375.0,0.3763440860215054
+2017,Asia-Pacifc,2 - Internet,g - Imagen,2 - g - Brand Reputation (prior-year image),72.0,65.0,84.0,100.0,93.0,82.8,78.5,21.5,0.27388535031847133
+2017,Asia-Pacifc,2 - Internet,g - Imagen,2 - g - Celebrity Appeal,160.0,95.0,0.0,135.0,120.0,102.0,93.75,41.25,0.44
+2017,Asia-Pacifc,2 - Internet,g - Imagen,2 - g - Search Engine Advert. ($000s),12000.0,12000.0,9000.0,11000.0,11500.0,11100.0,11125.0,-125.0,-0.011235955056179775
+2017,Asia-Pacifc,3 - Privada,a - Ingreso,3 - a - Offer Income ($000s),35949.9,18525.0,32144.0,0.0,0.0,17323.78,21654.725,-21654.725,-1.0
+2017,Asia-Pacifc,3 - Privada,b - Precio,3 - b - Offer Price (max = $40.00),39.9,39.0,41.0,0.0,0.0,23.98,29.975,-29.975,-1.0
+2017,Asia-Pacifc,3 - Privada,c - Volumen,3 - c - Pairs Offered (000s),901.0,475.0,784.0,0.0,0.0,432.0,540.0,-540.0,-1.0
+2017,Asia-Pacifc,3 - Privada,c - Volumen,3 - c - Pairs Sold (000s),901.0,475.0,784.0,0.0,0.0,432.0,540.0,-540.0,-1.0
+2017,Asia-Pacifc,3 - Privada,d - Cuota,3 - d - Market Share (%),0.399,0.21,0.347,0.0,0.0,0.19119999999999998,0.239,-0.239,-1.0
+2017,Asia-Pacifc,3 - Privada,e - Calidad,3 - e - S/Q Rating (min = 3.0 stars),5.0,5.0,5.2,0.0,0.0,3.04,3.8,-3.8,-1.0
+2017,Latin America,1 - Mayorista,a - Ingreso,1 - a - Wholesale Income ($000s),98770.0,86832.0,82142.0,271504.0,196488.0,147147.2,116058.0,155446.0,1.3393820331213704
+2017,Latin America,1 - Mayorista,b - Precio,1 - b - Rebate Offer ($ per pair),5.0,3.0,4.0,4.0,5.0,4.2,4.25,-0.25,-0.058823529411764705
+2017,Latin America,1 - Mayorista,b - Precio,1 - b - Wholesale Net Price ($ per pair),70.0,72.0,67.0,71.0,72.0,70.4,70.25,0.75,0.010676156583629894
+2017,Latin America,1 - Mayorista,b - Precio,1 - b - Wholesale Price ($ per pair),75.0,75.0,71.0,75.0,77.0,74.6,74.5,0.5,0.006711409395973154
+2017,Latin America,1 - Mayorista,c - Volumen,1 - c -   Gained / Lost (due to stockouts),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,
+2017,Latin America,1 - Mayorista,c - Volumen,1 - c - Pairs Demanded (000s),1411.0,1206.0,1226.0,3824.0,2729.0,2079.2,1643.0,2181.0,1.3274497869750457
+2017,Latin America,1 - Mayorista,c - Volumen,1 - c - Pairs Sold (000s),1411.0,1206.0,1226.0,3824.0,2729.0,2079.2,1643.0,2181.0,1.3274497869750457
+2017,Latin America,1 - Mayorista,d - Cuota,1 - d - Market Share (%),0.1357,0.116,0.1179,0.3678,0.2625,0.19998,0.158025,0.20977500000000002,1.3274798291409589
+2017,Latin America,1 - Mayorista,e - Calidad,1 - e - Model Availability,349.8,424.1,399.6,492.2,351.8,403.5,381.325,110.875,0.2907624729561398
+2017,Latin America,1 - Mayorista,e - Calidad,1 - e - S/Q Rating (1 to 10 stars),6.8,5.0,6.6,7.5,7.7,6.720000000000001,6.5249999999999995,0.9750000000000005,0.14942528735632193
+2017,Latin America,1 - Mayorista,f - Marketing,1 - f - Delivery Time (weeks),2.0,1.0,3.0,2.0,2.0,2.0,2.0,0.0,0.0
+2017,Latin America,1 - Mayorista,f - Marketing,1 - f - Retail Outlets,2478.0,932.0,2984.0,5911.0,4576.0,3376.2,2742.5,3168.5,1.1553327256153145
+2017,Latin America,1 - Mayorista,f - Marketing,1 - f - Retailer Support ($ per outlet),5000.0,4000.0,4000.0,8000.0,8000.0,5800.0,5250.0,2750.0,0.5238095238095238
+2017,Latin America,1 - Mayorista,g - Imagen,1 - g - Brand Advertising ($000s),15000.0,10000.0,10000.0,14000.0,15000.0,12800.0,12500.0,1500.0,0.12
+2017,Latin America,1 - Mayorista,g - Imagen,1 - g - Brand Reputation (prior-year image),72.0,65.0,84.0,100.0,93.0,82.8,78.5,21.5,0.27388535031847133
+2017,Latin America,1 - Mayorista,g - Imagen,1 - g - Celebrity Appeal,105.0,60.0,0.0,130.0,195.0,98.0,90.0,40.0,0.4444444444444444
+2017,Latin America,2 - Internet,a - Ingreso,2 - a - Retail Income ($000s),61964.100000000006,38368.0,47936.0,96470.0,80190.0,64985.619999999995,57114.525,39355.475,0.6890624582800959
+2017,Latin America,2 - Internet,b - Precio,2 - b - Retail Price ($ per pair),108.9,109.0,107.0,110.0,110.0,108.97999999999999,108.725,1.2750000000000057,0.011726833754886234
+2017,Latin America,2 - Internet,c - Volumen,2 - c - Online Orders (000s),569.0,352.0,448.0,877.0,729.0,595.0,524.5,352.5,0.6720686367969495
+2017,Latin America,2 - Internet,c - Volumen,2 - c - Pairs Sold (000s),569.0,352.0,448.0,877.0,729.0,595.0,524.5,352.5,0.6720686367969495
+2017,Latin America,2 - Internet,d - Cuota,2 - d - Market Share (%),0.1913,0.1183,0.1506,0.2948,0.245,0.2,0.1763,0.1185,0.6721497447532614
+2017,Latin America,2 - Internet,e - Calidad,2 - e - Model Availability,349.8,424.1,399.6,492.2,351.8,403.5,381.325,110.875,0.2907624729561398
+2017,Latin America,2 - Internet,e - Calidad,2 - e - S/Q Rating (1 to 10 stars),6.8,5.0,6.6,7.5,7.7,6.720000000000001,6.5249999999999995,0.9750000000000005,0.14942528735632193
+2017,Latin America,2 - Internet,f - Marketing,2 - f - Free Shipping,1.0,0.0,1.0,1.0,1.0,0.8,0.75,0.25,0.3333333333333333
+2017,Latin America,2 - Internet,g - Imagen,2 - g - Brand Advertising ($000s),15000.0,10000.0,10000.0,14000.0,15000.0,12800.0,12500.0,1500.0,0.12
+2017,Latin America,2 - Internet,g - Imagen,2 - g - Brand Reputation (prior-year image),72.0,65.0,84.0,100.0,93.0,82.8,78.5,21.5,0.27388535031847133
+2017,Latin America,2 - Internet,g - Imagen,2 - g - Celebrity Appeal,105.0,60.0,0.0,130.0,195.0,98.0,90.0,40.0,0.4444444444444444
+2017,Latin America,2 - Internet,g - Imagen,2 - g - Search Engine Advert. ($000s),10500.0,9000.0,8000.0,11000.0,10500.0,9800.0,9500.0,1500.0,0.15789473684210525
+2017,Latin America,3 - Privada,a - Ingreso,3 - a - Offer Income ($000s),35207.799999999996,18525.0,38872.0,0.0,0.0,18520.96,23151.199999999997,-23151.199999999997,-1.0
+2017,Latin America,3 - Privada,b - Precio,3 - b - Offer Price (max = $40.00),43.9,39.0,43.0,0.0,0.0,25.18,31.475,-31.475,-1.0
+2017,Latin America,3 - Privada,c - Volumen,3 - c - Pairs Offered (000s),802.0,475.0,904.0,0.0,0.0,436.2,545.25,-545.25,-1.0
+2017,Latin America,3 - Privada,c - Volumen,3 - c - Pairs Sold (000s),802.0,475.0,904.0,0.0,0.0,436.2,545.25,-545.25,-1.0
+2017,Latin America,3 - Privada,d - Cuota,3 - d - Market Share (%),0.355,0.21,0.4,0.0,0.0,0.193,0.24125,-0.24125,-1.0
+2017,Latin America,3 - Privada,e - Calidad,3 - e - S/Q Rating (min = 3.0 stars),5.0,5.0,5.2,0.0,0.0,3.04,3.8,-3.8,-1.0
